@@ -1,0 +1,23 @@
+.log{
+    max-width: 260px;
+}
+
+.menuAnimi{
+    transition: all 0.3s ease-out;
+}
+
+.menuAnimiChild{
+    will-change: transform, opacity;
+width: 32px;
+height: 3px;
+margin: 0 0 6px 0;
+background: #fff;
+opacity: 1;
+transform: translate(0) rotate(0deg);
+transition: all 0.2s ease-out;
+}
+
+.headerContainer{
+    display: flex;
+justify-content: center;
+}

@@ -1,0 +1,28 @@
+.input{
+    background: #222;
+color: #fff;
+border: none;
+height: 38px;
+width: 100%;
+border-radius: 5px;
+margin-bottom: 30px;
+padding-left: 10px;
+outline: unset;
+}
+.inputContainer{
+    margin: auto;
+width: 250px;
+color: #fff;    
+margin-top: 40px;
+}
+
+.shopList{
+    background: #111;
+border-radius: 10px;
+padding: 15px;
+color: #bbb;
+}
+.shopListContainer{
+    width: 285px;
+    margin-right: 20px;
+}

@@ -1,0 +1,15 @@
+.leftheading{
+    color: white;
+    font-size: 27px;
+}
+.rightheading{
+    color: #ff7b26;
+}
+.btn{
+    background-color: #ff7b26;
+color: white;
+border: none;
+padding: 15px 36px;
+font-size: 18px;
+border-radius: 10px;
+}
