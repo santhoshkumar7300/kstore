@@ -5,7 +5,7 @@ export default function StoreLocator() {
   const [pincode, setPincode] = useState(null);
 
   return (
-    <div>
+    <div className={Styles.parentContainer}>
       <div className="d-flex justify-content-center">
         <h1 className="text-white">
           Store <span className="orange"> Locator</span>

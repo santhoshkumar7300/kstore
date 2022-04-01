@@ -1,5 +1,6 @@
 import React from "react";
 import About from "./About";
+import FranchiseEnquiry from "./FranchiseEnquiry";
 
 import Header from "./Header";
 import Styles from "./Home.module.css";
@@ -15,6 +16,7 @@ function Home() {
       <About />
       <KeyHighlights />
       <StoreLocator />
+      <FranchiseEnquiry />
     </div>
   );
 }

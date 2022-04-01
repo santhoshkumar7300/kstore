@@ -26,3 +26,7 @@ color: #bbb;
     width: 285px;
     margin-right: 20px;
 }
+
+.parentContainer{
+    padding: 100px 0;
+}
