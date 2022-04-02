@@ -1,0 +1,17 @@
+.imgContainer{
+    width:285px;
+    margin-right: 25px;
+    filter: grayscale(1);
+    
+}
+.lgImg{
+    width: 285px;
+    margin-right: 25px;
+    filter: grayscale(1);
+}
+.imgContainer :hover{
+    filter: grayscale(0);
+}
+.lgImg :hover{
+    filter: grayscale(0);
+}

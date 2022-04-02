@@ -1,0 +1,151 @@
+.input {
+    background-color: #000;
+    border: none;
+    outline: unset;
+    color: white;
+    width: 100%;
+  }
+  .inputContainer {
+    border-bottom: 1px solid white;
+    width: 95%;
+    padding: 10px 0;
+  }
+  
+  .AddressinputContainer {
+    border-bottom: 1px solid white;
+    width: 100%;
+    padding: 10px 0;
+  }
+  .select {
+    background-color: #000 !important;
+    border: none !important;
+    color: white !important;
+    box-shadow: unset !important;
+    background-image: unset !important;
+  }
+  
+  .thirdChildContainer {
+    width: 33%;
+    margin-right: 15px;
+  }
+  
+  .radioLabel {
+    margin-left: 10px;
+  }
+  
+  .radioContainer {
+    margin-right: 10px;
+    display: flex;
+  }
+  .radioInput{
+      padding: 25px 0;
+  }
+  .progressbar{ 
+    max-width: 650px;
+    margin: 50px auto;
+    overflow: hidden;
+    color: lightgrey;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+  .progressbar li{
+    list-style-type: none;
+    font-size: 15px;
+    width: 25%;
+    float: left;
+    position: relative;
+    font-weight: 400;
+  }
+
+  .nextBtn{
+    width: 120px;
+    background: #ff7b26;
+      background-color: rgb(255, 123, 38);
+    color: white;
+    font-size: 16px;
+    border: 0 none;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 0px 10px 5px;
+  }
+  .previousBtn{
+    width: 120px;
+    background: ghostwhite;
+      background-color: ghostwhite;
+    color: black;
+    font-size: 16px;
+    border: 0 none;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 0px 10px 5px;
+  }
+  .liContainer{
+    width: 50px;
+    background-color: #ff7b26;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+  }
+  .li_img{
+    width: 33px;
+    position: absolute;
+    right: -28px;
+    bottom: -15px;
+  }
+.li_shopping{
+    width: 33px;
+    position: absolute;
+right: -28px;
+bottom: -20px;
+}
+.hr{
+    width: 80px;
+margin-top: 25px;
+height: 3px !important;
+background-color: #ff7b26;
+}
+.secondInputContainer{
+    display: flex;
+width: 100%;
+justify-content: space-evenly;
+}
+.label{
+    width: 33% !important;
+}
+.businessLabel{
+    margin-right: 25px;
+}
+.businessCheckbox{
+    width: 39%;
+}
+.othersContainer{
+    margin-left: 25px;
+}
+/* .checkbox{
+    width: 25px;
+height: 25px;
+border: 1px solid white;
+} */
+.storeCheckbox{
+    display: flex;
+width: 23%;
+justify-content: space-between;
+}
+.storeFloorCheckbox{
+    display: flex;
+width: 26%;
+justify-content: space-between;
+}
+.success{
+  font-size: 25px;
+  color: #ff7b26;
+  text-transform: uppercase;
+font-weight: bold;
+text-align: center;
+}
+.formContainer{
+  margin-left: 28%;
+}

@@ -13,3 +13,29 @@ padding: 15px 36px;
 font-size: 18px;
 border-radius: 10px;
 }
+
+.test {
+    margin-top: 25px;
+    font-size: 21px;
+    text-align: center;
+    animation: fadein 5s;
+    -moz-animation: fadein 5s; /* Firefox */
+    -webkit-animation: fadein 5s; /* Safari and Chrome */
+    -o-animation: fadein 5s; /* Opera */
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}

@@ -21,3 +21,33 @@ transition: all 0.2s ease-out;
     display: flex;
 justify-content: center;
 }
+.menuBtn{
+    will-change: transform;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-wrap: wrap;
+position: fixed;
+z-index: 111;
+top: 20px;
+right: 20px;
+height: 75px;
+background: transparent;
+cursor: pointer;
+width: 40px !important;
+}
+
+.upScrollContainer{
+    width: 40px;
+height: 40px;
+background-color: #ff7b26;
+border-radius: 50%;
+float: right;
+border: none;
+right: 15px;
+bottom: 25px;
+position: fixed;
+}
+.upscrollImg{
+    width: 20px;
+}

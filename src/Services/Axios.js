@@ -1,6 +1,6 @@
 import axios from "axios";
-import { getCookie, setCookie } from "Cookie/cookie";
-import BaseURL from "../Utility/Utility";
+// import { getCookie, setCookie } from "Cookie/cookie";
+import { BaseURL } from "../Utility/Utility";
 
 const instance = axios.create({
   baseURL: BaseURL,

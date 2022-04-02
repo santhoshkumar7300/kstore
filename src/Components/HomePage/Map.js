@@ -3,8 +3,8 @@ import map from "../../Assets/map-01.png";
 
 export default function Map() {
   return (
-    <div className="container d-flex mt-5">
-      <div className="w-50 align-self-center">
+    <div className={Styles.test + " container d-flex mt-5"}>
+      <div className="w-50 align-self-center text-start">
         <h1 className={Styles.leftheading}>
           New to Franchising |{" "}
           <span className={Styles.rightheading}>New to Business</span>{" "}

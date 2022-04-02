@@ -12,3 +12,12 @@ p {
 .orange{
   color:#ff7b26 ;
 }
+
+@font-face {
+  font-family: kstore;
+  src: url("./fonts/Blur.ttf");
+}
+
+.kstoreFont{
+  font-family: kstore;
+}

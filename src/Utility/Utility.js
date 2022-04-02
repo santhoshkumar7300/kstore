@@ -1,4 +1,4 @@
-export const BaseURL = "";
+export const BaseURL = "http://192.168.1.125:8001/";
 
 export function getCookie(cname) {
   var name = cname + "=";
