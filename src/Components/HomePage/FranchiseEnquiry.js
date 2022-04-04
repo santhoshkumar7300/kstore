@@ -8,18 +8,28 @@ import FranchisePersonal from "./FranchisePersonal";
 import FranchiseBusiness from "./FranchiseBusiness";
 import FranchiseStore from "./FranchiseStore";
 import success from "../../Assets/success.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import {
+  cityService,
+  personalDetailsService,
+  stateService,
+} from "../../Services/ApiServices";
+import { toast } from "react-toastify";
 
 export default function FranchiseEnquiry() {
-  const [formState, setFormState] = useState(2);
-  const [store, setStore] = useState("");
-  const [floor, setFloor] = useState("");
+  const [formState, setFormState] = useState(0);
+  const [loader, setLoader] = useState(false);
+  const [state, setState] = useState([]);
+  const [city, setCity] = useState([]);
+  useEffect(() => {
+    stateService()
+      .then((res) => setState(res.data))
+      .catch((err) => console.log(err));
+  }, []);
 
-  const changeState = (data) => {
-    setFormState(data);
-  };
+  // console.log(state, "===state");
 
   const formik = useFormik({
     initialValues: {
@@ -36,10 +46,10 @@ export default function FranchiseEnquiry() {
       state: "",
       convinentCall: "",
       referedBy: "",
-      timeFrame: "",
+      timeFrame: "0",
       storePrefered: "",
-      // storeSituated: "",
-      // floor: "",
+      storeSituated: "",
+      floor: "",
     },
 
     validationSchema: Yup.object({
@@ -56,23 +66,86 @@ export default function FranchiseEnquiry() {
       convinentCall: Yup.string().required("Required"),
       referedBy: Yup.string().required("Required"),
       timeFrame: Yup.string().required("Required"),
-      // storeSituated: Yup.string().required("Required"),
-      // floor: Yup.string().required("Required"),
+      storeSituated: Yup.string().required("Required"),
+      floor: Yup.string().required("Required"),
       storePrefered: Yup.string().required("Required"),
       email: Yup.string().email("Invalid email address").required("Required"),
     }),
+    validateOnChange: false,
 
     onSubmit: (values) => {
-      // alert(JSON.stringify(values));
-      console.log(values);
-      // personalDetailsService();
+      handleData(values);
     },
   });
+  const handleCity = (data) => {
+    let formData = new FormData();
+    formData.append("state_id", data);
+    console.log(data, "====stateid");
+    cityService(formData)
+      .then((res) => setCity(res.data))
+      .catch((err) => console.log(err));
+  };
+
+  const handlePrevios = () => {
+    setFormState(formState - 1);
+  };
+
+  const handleData = (data) => {
+    let formData = new FormData();
+    formData.append("name", data.name);
+    formData.append("dob", data.dob);
+    formData.append("email", data.email);
+    formData.append("address", data.address);
+    formData.append("current_occupation", data.currentOccupation);
+    formData.append("experience", data.experience);
+    formData.append("gender", parseInt(data.gender));
+    formData.append("nationality", data.nationality);
+    formData.append("mobile_no", parseInt(data.mobile));
+    formData.append("city", parseInt(data.city));
+    formData.append("state", parseInt(data.state));
+    formData.append("store_preferred", data.storePrefered);
+    formData.append("convinent_call_time", data.convinentCall);
+    formData.append("refered_by", data.referedBy);
+    formData.append(
+      "time_frame_on_starting_business",
+      parseInt(data.timeFrame)
+    );
+    formData.append("store_situated_at", data.storeSituated);
+    formData.append("floor", data.floor);
+    personalDetailsService(formData)
+      .then((res) => {
+        console.log("response");
+        if (res.status === 200) {
+          console.log(res, "===res");
+          toast(res.data, { type: success });
+          setFormState(3);
+        }
+      })
+      .catch((err) => {
+        // console.log(err?.response?.data?.detail, "=======error");
+        // if (err?.response?.data?.detail[0].msg) {
+        //   toast(err.detail[0].msg);
+        // } else if (err?.response?.data?.detail) {
+        //   toast(err.detail[0]);
+        // }
+        if (err?.response?.data?.detail) {
+          toast(err.response.data.detail[0].msg);
+        } else {
+          toast("Something went wrong!!");
+        }
+      })
+      .finally(() => setLoader(false));
+  };
 
   return (
     <div>
+      {loader ? (
+        <div className={Styles.loaderParent}>
+          <div className={Styles.loader}></div>
+        </div>
+      ) : null}
       <div className="d-flex justify-content-center">
-        <h1 className="text-white">
+        <h1 className="text-white kstoreFont">
           Franchise <span className="orange">Enquiry</span>
         </h1>
       </div>
@@ -81,24 +154,23 @@ export default function FranchiseEnquiry() {
         <ul className={Styles.progressbar}>
           <div
             className={Styles.liContainer}
-            // style={
-            //   formState <= 3
-            //     ? { backgroundColor: "#ff7b26" }
-            //     : { backgroundColor: "lightgray" }
-            // }
+            style={{ backgroundColor: "#ff7b26" }}
           >
             <li>
               <img className={Styles.li_img} src={person} alt="person" />
             </li>
+            <span style={{ color: "#ff7b26" }} className={Styles.positonName}>
+              Personal
+            </span>
           </div>
-          <div className={Styles.hr} />
+          <div className={Styles.hr} style={{ backgroundColor: "#ff7b26" }} />
           <div
             className={Styles.liContainer}
-            // style={
-            //   formState <= 3
-            //     ? { backgroundColor: "#ff7b26" }
-            //     : { backgroundColor: "lightgray" }
-            // }
+            style={
+              formState === 1 || formState === 2 || formState === 3
+                ? { backgroundColor: "#ff7b26" }
+                : { backgroundColor: "lightgray" }
+            }
           >
             <li>
               <img
@@ -107,38 +179,80 @@ export default function FranchiseEnquiry() {
                 alt="person"
               />
             </li>
+            <span
+              style={
+                formState === 1 || formState === 2 || formState === 3
+                  ? { color: "#ff7b26" }
+                  : { color: "lightgray" }
+              }
+              className={Styles.positonName}
+            >
+              Business
+            </span>
           </div>
-          <div className={Styles.hr} />
+          <div
+            className={Styles.hr}
+            style={
+              formState === 1 || formState === 2 || formState === 3
+                ? { backgroundColor: "#ff7b26" }
+                : { backgroundColor: "lightgray" }
+            }
+          />
           <div
             className={Styles.liContainer}
-            // style={
-            //   formState === 3
-            //     ? { backgroundColor: "#ff7b26" }
-            //     : { backgroundColor: "lightgray" }
-            // }
+            style={
+              formState === 2 || formState === 3
+                ? { backgroundColor: "#ff7b26" }
+                : { backgroundColor: "lightgray" }
+            }
           >
             <li>
-              <img className={Styles.li_shopping} src={store} alt="person" />
+              <img className={Styles.li_shopping} src={store} alt="store" />
             </li>
+            <span
+              style={
+                formState === 2 || formState === 3
+                  ? { color: "#ff7b26" }
+                  : { color: "lightgray" }
+              }
+              className={Styles.positionStore}
+            >
+              Store
+            </span>
           </div>
-          <div className={Styles.hr} />
+          <div
+            className={Styles.hr}
+            style={
+              formState === 2 || formState === 3
+                ? { backgroundColor: "#ff7b26" }
+                : { backgroundColor: "lightgray" }
+            }
+          />
           <div
             className={Styles.liContainer}
-            // style={
-            //   formState === 3
-            //     ? { backgroundColor: "#ff7b26" }
-            //     : { backgroundColor: "lightgray" }
-            // }
+            style={
+              formState === 3
+                ? { backgroundColor: "#ff7b26" }
+                : { backgroundColor: "lightgray" }
+            }
           >
             <li>
               <img className={Styles.li_shopping} src={white_ok} alt="person" />
             </li>
+            <span
+              style={
+                formState === 3 ? { color: "#ff7b26" } : { color: "lightgray" }
+              }
+              className={Styles.positonName}
+            >
+              Complete
+            </span>
           </div>
         </ul>
       </div>
 
       <div className="container">
-        <form>
+        <form onSubmit={(e) => e.preventDefault()}>
           {formState === 0 ? (
             <div>
               <div className="d-flex">
@@ -221,11 +335,11 @@ export default function FranchiseEnquiry() {
                       onChange={formik.handleChange}
                       value={formik.values.experience}
                     >
-                      <option value="1">0-1</option>
-                      <option value="2">1-2</option>
-                      <option value="3">2-5</option>
-                      <option value="3">5-10</option>
-                      <option value="3">10-15</option>
+                      <option value="0-1">0-1</option>
+                      <option value="1-2">1-2</option>
+                      <option value="2-5">2-5</option>
+                      <option value="5-10">5-10</option>
+                      <option value="10-15">10-15</option>
                     </Form.Select>
                   </div>
                   {formik.touched.experience && formik.errors.experience ? (
@@ -241,7 +355,7 @@ export default function FranchiseEnquiry() {
                     <div className={Styles.radioContainer}>
                       <input
                         onChange={formik.handleChange}
-                        className="align-self-center"
+                        className={Styles.radioBtn + " align-self-center"}
                         type="radio"
                         value="1"
                         name="gender"
@@ -259,6 +373,7 @@ export default function FranchiseEnquiry() {
                         value="2"
                         type="radio"
                         name="gender"
+                        className={Styles.radioBtn + " align-self-center"}
                       />
                       <label className={Styles.radioLabel + " text-white"}>
                         Female
@@ -284,8 +399,8 @@ export default function FranchiseEnquiry() {
                       onChange={formik.handleChange}
                       value={formik.values.nationality}
                     >
-                      <option value="1">Indian</option>
-                      <option value="2">NRI</option>
+                      <option value="Indian">Indian</option>
+                      <option value="NRI">NRI</option>
                     </Form.Select>
                   </div>
                   {formik.touched.nationality && formik.errors.nationality ? (
@@ -342,12 +457,17 @@ export default function FranchiseEnquiry() {
                   <div className="w-50">
                     <label className="text-white">City*</label>
                     <div className={Styles.inputContainer}>
-                      <input
-                        onChange={formik.handleChange}
+                      <Form.Select
+                        className={Styles.select + " p-0"}
+                        aria-label="Default select example"
                         name="city"
-                        className={Styles.input}
-                        type="text"
-                      />
+                        onChange={formik.handleChange}
+                        value={formik.values.city}
+                      >
+                        {city.map((e) => (
+                          <option value={e.cities_id}>{e.cities_name}</option>
+                        ))}
+                      </Form.Select>
                     </div>
                     {formik.touched.city && formik.errors.city ? (
                       <div className="text-danger fs-6">
@@ -358,12 +478,22 @@ export default function FranchiseEnquiry() {
                   <div className="w-50">
                     <label className="text-white">state*</label>
                     <div className={Styles.AddressinputContainer}>
-                      <input
-                        onChange={formik.handleChange}
+                      <Form.Select
+                        className={Styles.select + " p-0"}
+                        aria-label="Default select example"
                         name="state"
-                        className={Styles.input}
-                        type="text"
-                      />
+                        onChange={formik.handleChange}
+                        value={formik.values.state}
+                      >
+                        {state.map((e) => (
+                          <option
+                            onClick={() => handleCity(e.state_id)}
+                            value={e.state_id}
+                          >
+                            {e.state_name}
+                          </option>
+                        ))}
+                      </Form.Select>
                     </div>
                     {formik.touched.state && formik.errors.state ? (
                       <div className="text-danger fs-6">
@@ -383,10 +513,18 @@ export default function FranchiseEnquiry() {
                       name="storePrefered"
                       onChange={formik.handleChange}
                     >
-                      <option value="1">TIER 1 (100 SQ FT TO 150 SQ FT)</option>
-                      <option value="2">TIER 2 (150 SQ FT TO 250 SQ FT)</option>
-                      <option value="3">TIER 3 (250 SQ FT TO 350 SQ FT)</option>
-                      <option value="3">TIER 4 (350 SQ FT TO 500 SQ FT)</option>
+                      <option value="TIER 1 (100 SQ FT TO 150 SQ FT)">
+                        TIER 1 (100 SQ FT TO 150 SQ FT)
+                      </option>
+                      <option value="TIER 2 (150 SQ FT TO 250 SQ FT)">
+                        TIER 2 (150 SQ FT TO 250 SQ FT)
+                      </option>
+                      <option value="TIER 3 (250 SQ FT TO 350 SQ FT)">
+                        TIER 3 (250 SQ FT TO 350 SQ FT)
+                      </option>
+                      <option value="TIER 4 (350 SQ FT TO 500 SQ FT)">
+                        TIER 4 (350 SQ FT TO 500 SQ FT)
+                      </option>
                     </Form.Select>
                   </div>
                   {formik.touched.storePrefered &&
@@ -448,7 +586,15 @@ export default function FranchiseEnquiry() {
                       value="1"
                       name="timeFrame"
                       id="flexCheckChecked"
-                      onChange={formik.handleChange}
+                      onChange={(e) => {
+                        if (formik.values.timeFrame === "0") {
+                          formik.setFieldValue("timeFrame", e.target.value);
+                        } else {
+                          formik.setFieldValue("timeFrame", "0");
+                        }
+                        // formik.setFieldValue("timeFrame", e.target.value);
+                        // console.log(formik.values.timeFrame, "===timeFrame");
+                      }}
                     />
                     <label class="form-check-label text-white">Immediate</label>
                   </div>
@@ -477,10 +623,13 @@ export default function FranchiseEnquiry() {
                     <input
                       class="form-check-input"
                       type="checkbox"
-                      value={store}
+                      value="ownbuilding"
+                      name="storeSituated"
+                      onChange={(e) =>
+                        formik.setFieldValue("storeSituated", e.target.value)
+                      }
+                      checked={formik.values.storeSituated === "ownbuilding"}
                       id="flexCheckDefault"
-                      onChange={() => setStore("Own Building")}
-                      checked={store === "Own Building"}
                     />
                     <label class="form-check-label text-white">
                       Own Building
@@ -490,14 +639,22 @@ export default function FranchiseEnquiry() {
                     <input
                       class={Styles.checkbox + " form-check-input"}
                       type="checkbox"
-                      value={store}
                       id="flexCheckChecked"
-                      onChange={() => setStore("Rental")}
-                      checked={store === "Rental"}
+                      value="rental"
+                      name="storeSituated"
+                      onChange={(e) =>
+                        formik.setFieldValue("storeSituated", e.target.value)
+                      }
+                      checked={formik.values.storeSituated === "rental"}
                     />
                     <label class="form-check-label text-white">Rental</label>
                   </div>
                 </div>
+                {formik.touched.storeSituated && formik.errors.storeSituated ? (
+                  <div className="text-danger fs-6">
+                    {formik.errors.storeSituated}
+                  </div>
+                ) : null}
               </div>
               <div>
                 <p className="text-white mb-0 mt-3">Floor</p>
@@ -506,10 +663,13 @@ export default function FranchiseEnquiry() {
                     <input
                       class="form-check-input"
                       type="checkbox"
-                      value={floor}
+                      value="ground"
                       id="flexCheckDefault"
-                      onChange={() => setFloor("ground")}
-                      checked={floor === "ground"}
+                      name="floor"
+                      onChange={(e) =>
+                        formik.setFieldValue("floor", e.target.value)
+                      }
+                      checked={formik.values.floor === "ground"}
                     />
                     <label class="form-check-label text-white">Ground</label>
                   </div>
@@ -517,10 +677,13 @@ export default function FranchiseEnquiry() {
                     <input
                       class={Styles.checkbox + " form-check-input"}
                       type="checkbox"
-                      value={floor}
+                      name="floor"
+                      value="first"
                       id="flexCheckChecked"
-                      onChange={() => setFloor("first")}
-                      checked={floor === "first"}
+                      onChange={(e) =>
+                        formik.setFieldValue("floor", e.target.value)
+                      }
+                      checked={formik.values.floor === "first"}
                     />
                     <label class="form-check-label text-white">First</label>
                   </div>
@@ -528,14 +691,20 @@ export default function FranchiseEnquiry() {
                     <input
                       class={Styles.checkbox + " form-check-input"}
                       type="checkbox"
-                      value={floor}
+                      name="floor"
+                      value="second"
                       id="flexCheckChecked"
-                      onChange={() => setFloor("second")}
-                      checked={floor === "second"}
+                      onChange={(e) =>
+                        formik.setFieldValue("floor", e.target.value)
+                      }
+                      checked={formik.values.floor === "second"}
                     />
                     <label class="form-check-label text-white">Second</label>
                   </div>
                 </div>
+                {formik.touched.floor && formik.errors.floor ? (
+                  <div className="text-danger fs-6">{formik.errors.floor}</div>
+                ) : null}
               </div>
             </div>
           ) : formState === 3 ? (
@@ -548,9 +717,44 @@ export default function FranchiseEnquiry() {
           ) : null}
           <div className="text-center mt-5">
             {formState > 0 ? (
-              <button className={Styles.previousBtn}>Previous</button>
+              <button
+                style={formState === 3 ? { display: "none" } : null}
+                onClick={handlePrevios}
+                className={Styles.previousBtn}
+              >
+                Previous
+              </button>
             ) : null}
-            <button className={Styles.nextBtn}>Next</button>
+            {/* {formState === 2 ? (
+              <button
+                type="submit"
+                onClick={handleData}
+                className={Styles.nextBtn}
+              >
+                Submit
+              </button>
+            ) : (
+              <button
+                onClick={() => setFormState(formState + 1)}
+                className={Styles.nextBtn}
+              >
+                Next
+              </button>
+            )} */}
+            <button
+              style={formState === 3 ? { display: "none" } : null}
+              onClick={() => {
+                if (formState === 2) {
+                  formik.handleSubmit();
+                  setLoader(true);
+                } else {
+                  setFormState(formState + 1);
+                }
+              }}
+              className={Styles.nextBtn}
+            >
+              {formState === 2 ? "Submit" : "Next"}
+            </button>
           </div>
         </form>
         {/* {formState === 0 ? (

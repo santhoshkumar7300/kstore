@@ -6,15 +6,13 @@ import NotFound from "./Components/NotFound/NotFound";
 import AuthLayout from "./Layout/AuthLayout/AuthLayout";
 import HomeLayout from "./Layout/HomeLayout/HomeLayout";
 
-import "bootstrap/dist/css/bootstrap.min.css";
-
 function App() {
   return (
     <Routes>
-      {/* <Route path="/" element={<AuthLayout />}>
+      <Route path="/Auth" element={<AuthLayout />}>
         <Route index element={<SignIn />} />
         <Route path="signup" element={<SignUp />} />
-      </Route> */}
+      </Route>
       <Route path="/" element={<HomeLayout />}>
         <Route index element={<Home />} />
       </Route>

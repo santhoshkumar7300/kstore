@@ -44,10 +44,11 @@ background-color: #ff7b26;
 border-radius: 50%;
 float: right;
 border: none;
-right: 15px;
+right: 20px;
 bottom: 25px;
 position: fixed;
 }
 .upscrollImg{
     width: 20px;
 }
+

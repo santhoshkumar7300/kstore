@@ -14,14 +14,14 @@ font-size: 18px;
 border-radius: 10px;
 }
 
-.test {
+/* .test {
     margin-top: 25px;
     font-size: 21px;
     text-align: center;
     animation: fadein 5s;
-    -moz-animation: fadein 5s; /* Firefox */
-    -webkit-animation: fadein 5s; /* Safari and Chrome */
-    -o-animation: fadein 5s; /* Opera */
+    -moz-animation: fadein 5s; 
+    -webkit-animation: fadein 5s; 
+    -o-animation: fadein 5s; 
 }
 @keyframes fadein {
     from {
@@ -31,11 +31,11 @@ border-radius: 10px;
         opacity:1;
     }
 }
-@-moz-keyframes fadein { /* Firefox */
+@-moz-keyframes fadein { 
     from {
         opacity:0;
     }
     to {
         opacity:1;
     }
-}
+} */

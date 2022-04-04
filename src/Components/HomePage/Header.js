@@ -1,6 +1,7 @@
 import gif from "../../Assets/kstore.gif";
 import Styles from "./Header.module.css";
 import upscroll from "../../Assets/upscroll.png";
+import { toast } from "react-toastify";
 
 export default function Header() {
   const scrollHandle = () => {
@@ -23,7 +24,11 @@ export default function Header() {
       </div>
 
       <div>
-        <button onClick={scrollHandle} className={Styles.upScrollContainer}>
+        <button
+          data-aos="fade"
+          onClick={scrollHandle}
+          className={Styles.upScrollContainer}
+        >
           <img className={Styles.upscrollImg} src={upscroll} alt="scroll" />
         </button>
       </div>

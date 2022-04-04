@@ -46,7 +46,7 @@ export default function ContactUs() {
   return (
     <div className="mt-5">
       <div className="d-flex justify-content-center">
-        <h1 className="text-white">
+        <h1 className="text-white kstoreFont">
           Contact <span className="orange">Us</span>
         </h1>
       </div>

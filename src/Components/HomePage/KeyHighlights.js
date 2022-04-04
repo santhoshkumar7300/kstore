@@ -52,7 +52,7 @@ export default function KeyHighlights() {
   return (
     <div className="mt-5">
       <div className="d-flex justify-content-center">
-        <h1 className="text-white fs-1">
+        <h1 className="text-white fs-1 kstoreFont">
           Key <span className="orange">Highlights</span>{" "}
         </h1>
       </div>
@@ -92,7 +92,11 @@ export default function KeyHighlights() {
         </div>
       </div>
 
-      <div className="d-flex justify-content-center mt-5">
+      <div
+        data-aos="fade"
+        data-aos-once="true"
+        className="d-flex justify-content-center mt-5"
+      >
         <img className={Styles.homeImg} src={homeapp} alt="home" />
       </div>
     </div>

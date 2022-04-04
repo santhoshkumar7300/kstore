@@ -1,10 +1,11 @@
 import Styles from "./About.module.css";
 import leftImg from "../../Assets/about.png";
-// import flowImg from "../../Assets/kstore-flow.svg";
+import FlowImg from "../../Assets/kstore-flow.svg";
+// import { ReactComponent as YourSvg } from "../../Assets/kstore-flow.svg";
 
 export default function About() {
   return (
-    <div className={Styles.test}>
+    <div className={Styles.test + " container"}>
       <div>
         <div className="d-flex justify-content-center">
           <h1 className="text-white kstoreFont">
@@ -16,7 +17,7 @@ export default function About() {
             <img className={Styles.img} src={leftImg} alt="img" />
           </div>
           <div className="w-50 mt-5">
-            <p className="text-white text-start fs-6">
+            <p className="text-white text-start fs-6 kstoreFont3">
               KANSAS - The One Big Wallet is a prosperous 5 years old digital
               payment concern serving b2b market enabling retailers to earn high
               ROI with low investment. The services offered are Prepay and DTH
@@ -27,7 +28,7 @@ export default function About() {
               venture “KSTORe”
             </p>
             <br />
-            <p className="text-white text-start fs-6">
+            <p className="text-white text-start fs-6 kstoreFont3">
               KSTORe - Phygital store is a new generation idea combining
               ecommerce and physical store, creating enormous opportunities to
               earn with less investment. K-store is a franchise opportunity
@@ -38,7 +39,11 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div></div>
+      <div className="container">
+        {/* <img src={flowImg} alt="img" /> */}
+        <FlowImg />
+        {/* <YourSvg /> */}
+      </div>
     </div>
   );
 }

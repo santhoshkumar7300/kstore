@@ -15,9 +15,48 @@ p {
 
 @font-face {
   font-family: kstore;
-  src: url("./fonts/Blur.ttf");
+  src: url("../../kstore/src/fonts/blur.ttf");
 }
 
 .kstoreFont{
   font-family: kstore;
 }
+
+@font-face {
+  font-family: kstore2;
+  src: url("../../kstore/src/fonts/ubuntu.ttf");
+}
+
+.kstoreFont2{
+  font-family: kstore2;
+}
+
+@font-face {
+  font-family: kstore3;
+  src: url("../../kstore/src/fonts/Ubuntu-Light.ttf");
+}
+
+.kstoreFont3{
+  font-family: kstore3;
+}
+/* #button{
+  display: inline-block;
+background-color: #f77a26;
+width: 40px;
+height: 40px;
+text-align: center;
+border-radius: 40px;
+position: fixed;
+bottom: 20px;
+right: 20px;
+transition: background-color .3s, opacity .5s, visibility .5s;
+opacity: 0;
+visibility: hidden;
+z-index: 1000;
+text-decoration: none;
+}
+
+#button.show{
+  opacity: 1;
+visibility: visible;
+} */
