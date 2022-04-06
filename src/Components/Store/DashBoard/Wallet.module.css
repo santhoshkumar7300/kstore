@@ -1,0 +1,18 @@
+.overallContainer{
+    background-color: white;
+box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+padding: 8px 15px;
+margin-bottom: 15px;
+}
+.img{
+    width: 25px;
+}
+.date{
+    color: rgba(0,0,0,0.6);
+    margin-bottom: 0;
+    font-size: 12px;
+}
+.font{
+    font-size: 12px;
+    font-weight: bold;
+}

@@ -1,0 +1,86 @@
+.settingsImg{
+    width: 18px;
+}
+.leftContainer{
+    width: 25%;
+    float: left;
+    display: flex;
+    justify-content: space-between;
+}
+.rightContainer{
+    width: 43%;
+    float: left;
+    display: flex;
+    justify-content: space-between;
+}
+.settings2Container{
+    width: 33px;
+    height: 33px;
+    background: rgba(0, 0, 0, 0.04);
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.addContainer{
+    width: 33px;
+    height: 33px;
+    background: #FF842E;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.dateContainer{
+    width: 60% !important;
+    background: rgba(0,0,0,0.03);
+    cursor: pointer;
+    border-radius: 5px;
+}
+.overallContainer{
+    width: 100%;
+float: left;
+display: flex;
+justify-content: space-between;
+margin-top: 20px;
+}
+.hrContainer{
+    float: left;
+    display: flex;
+}
+.hr1{
+    height: 3px !important;
+width: 15%;
+color: #FB9952;
+}
+.hr2{
+    height: 3px !important;
+    width: 85%;
+}
+td{
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+table{
+    width: 85%;
+}
+.tableImgContainer{
+    width: 47px;
+height: 39px;
+background: #F8AC94;
+border-radius: 6px;
+display: flex;
+justify-content: center;
+}
+.tableContainer{
+    width: 100%;
+    float: left;
+    margin: 15px 0;
+}
+.mapContainer{
+    width: 100%;
+float: left;
+height: 500px;
+overflow: auto;
+}

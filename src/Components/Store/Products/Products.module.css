@@ -1,0 +1,12 @@
+.overallContainer{
+    width: 100%;
+    float: left;
+}
+.leftContainer{
+    width: 25%;
+    float: left;
+}
+.clearall{
+    font-size: 12px;
+    font-weight: bold;
+}

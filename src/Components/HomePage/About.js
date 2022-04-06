@@ -1,6 +1,6 @@
 import Styles from "./About.module.css";
 import leftImg from "../../Assets/about.png";
-import FlowImg from "../../Assets/kstore-flow.svg";
+// import FlowImg from "../../Assets/kstore-flow.svg";
 // import { ReactComponent as YourSvg } from "../../Assets/kstore-flow.svg";
 
 export default function About() {
@@ -41,7 +41,7 @@ export default function About() {
       </div>
       <div className="container">
         {/* <img src={flowImg} alt="img" /> */}
-        <FlowImg />
+        {/* <FlowImg /> */}
         {/* <YourSvg /> */}
       </div>
     </div>

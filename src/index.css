@@ -39,6 +39,19 @@ p {
 .kstoreFont3{
   font-family: kstore3;
 }
+
+.moneyBtn{
+color: white;
+border: none;
+padding: 3px 14px;
+border-radius: 6px;
+font-size: 12px;
+font-weight: bold;
+}
+
+/* .react-multi-carousel-item{
+  width: 100px !important;
+} */
 /* #button{
   display: inline-block;
 background-color: #f77a26;

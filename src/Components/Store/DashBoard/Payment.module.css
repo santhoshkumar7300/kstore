@@ -1,0 +1,23 @@
+.overallContainer{
+    width: 100%;
+    background-color: white;
+    padding: 0 25px;
+    border-radius: 12px;
+}
+.profileContainer{
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.dropdownContainer{
+    width: 30%;
+    justify-content: space-between;
+}
+.paymentMethodContainer{
+    padding: 10px 0;
+}
+.profileContent{
+    font-size: 12px;
+    align-self: center;
+}

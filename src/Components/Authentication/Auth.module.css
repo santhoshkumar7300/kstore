@@ -1,0 +1,58 @@
+
+.loginRightContainer{
+    width: 50%;
+    float: left;
+    height: 500px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+.loginRightPara{
+    color: rgba(0,0,0,0.7);
+}
+.visibleImg{
+    width: 20px;
+    height: 20px;
+}
+.inputContainer{
+    width: 90%;
+height: 50px;
+box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+border-radius: 6px;
+margin-top: 5px;
+}
+.emailInput{
+    border: none;
+height: 50px;
+outline: unset;
+padding: 0 15px;
+width: 100%;
+}
+.passwordInput{
+    border: none;
+height: 50px;
+outline: unset;
+padding: 0 15px;
+width: 93%;
+}
+
+.loginBtn{
+    width: 90%;
+height: 50px;
+background-color: #FF7C25;
+border: none;
+color: white;
+font-weight: bold;
+border-radius: 9px;
+}
+.forgotPassword{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.forgotpasswordContainer{
+    text-align: center;
+    margin-top: 15px;
+}
+.errorMsg{
+    font-size: 12px;
+}

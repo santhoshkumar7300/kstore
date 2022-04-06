@@ -1,0 +1,37 @@
+.logo{
+    width: 180px;
+}
+.menu{
+    width: 35px;
+    cursor: pointer;
+}
+.logoContainer{
+    width: 21%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.link{
+    text-decoration: none;
+color: white;
+font-size: 14px;
+font-weight: bold;
+}
+.linkContainer{
+    width: 55%;
+    align-self: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+.LogoImg{
+width: 25px;
+cursor: pointer;
+}
+.LogoImgContainer{
+    width: 20%;
+align-self: center;
+display: flex;
+justify-content: space-evenly;
+}
+.overallContainer{
+    padding: 13px 0;
+}

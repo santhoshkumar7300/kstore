@@ -1,7 +1,7 @@
 import Styles from "./Map.module.css";
 import map from "../../Assets/map-01.png";
 
-export default function Map() {
+export default function Map(props) {
   return (
     <div className={Styles.test + " container d-flex "}>
       <div className="w-50 align-self-center text-start">

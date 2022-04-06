@@ -1,0 +1,23 @@
+.bg{
+    width: 50px;
+height: 40px;
+box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+display: flex;
+justify-content: center;
+}
+.img{
+    width: 24px;
+height: 38px;
+}
+.parentContainer{
+    width: 25%;
+    display: flex;
+justify-content: center;
+flex-wrap: wrap;
+margin-right: 19px;
+}
+.serviceDescription{
+    font-size: 12px;
+    font-weight: bold;
+    padding-top: 7px;
+}
