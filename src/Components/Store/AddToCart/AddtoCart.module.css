@@ -1,0 +1,32 @@
+.bg{
+    background-color: #F8F3F0;
+    height: 100vh;
+}
+
+.imgContainer{
+    width: 100px;
+height: 75px;
+border: 1px solid rgba(0,0,0,0.1);
+}
+.img{
+    width: 75px;
+height: 75px;
+object-fit: contain;
+}
+.productContainer{
+    display: flex;
+justify-content: space-evenly;
+margin: 35px !important;
+}
+.productCount{
+    width: 60px;
+background: #f5f5f5;
+border: none;
+height: 33px;
+padding: 0px 8px;
+margin-left: 25px;
+}
+.bodyContainer{
+    width: 200px !important;
+    overflow: auto;
+}

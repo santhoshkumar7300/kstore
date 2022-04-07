@@ -4,9 +4,9 @@ import SignIn from "./Components/Authentication/SignIn";
 import SignUp from "./Components/Authentication/SignUp";
 import Home from "./Components/HomePage/Home";
 import NotFound from "./Components/NotFound/NotFound";
+import AddToCart from "./Components/Store/AddToCart/AddtoCart";
 import Store from "./Components/Store/DashBoard/Store";
 import Products from "./Components/Store/Products/Products";
-
 import AuthLayout from "./Layout/AuthLayout/AuthLayout";
 import HomeLayout from "./Layout/HomeLayout/HomeLayout";
 import StoreLayout from "./Layout/StoreLayout/StoreLayout";
@@ -25,6 +25,7 @@ function App() {
       <Route path="/store" element={<StoreLayout />}>
         <Route index element={<Store />} />
         <Route path="products" element={<Products />} />
+        <Route path="addtocart" element={<AddToCart />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

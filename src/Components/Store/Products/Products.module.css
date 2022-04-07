@@ -5,8 +5,52 @@
 .leftContainer{
     width: 25%;
     float: left;
+    padding: 10px 35px;
 }
 .clearall{
     font-size: 12px;
     font-weight: bold;
+    align-self: center  ;
+}
+.hr1{
+    height: 3px !important;
+    width: 25%;
+    color: #FF7C25;
+}
+.hr2{
+    height: 3px !important;
+    width: 75%;
+}
+.searchInput{
+    border: none;
+outline: unset;
+padding: 5px 15px;
+background-color: #f5f5f5;
+width: 91%;
+}
+.searchChildContainer{
+    display: flex;
+background: #f5f5f5;
+width: 100%;
+padding: 7px 11px;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+justify-content: space-between;
+}
+.searchImg{
+    width: 25px;
+    cursor: pointer;
+}
+.rightContainer{
+    width: 75%;
+    float: left;
+    padding: 50px 45px;
+    background-color: #F8F3F0;
+}
+.selectContainer{
+    width: 72%;
+}
+.select{
+    border: none;
+box-shadow: unset;
 }

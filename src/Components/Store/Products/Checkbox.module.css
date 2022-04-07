@@ -1,0 +1,16 @@
+.checkbox {
+    overflow: auto;
+  }
+  .checkboxContainer {
+    /* height: 250px; */
+    /* overflow: auto; */
+    scrollbar-color: #FF7C25 #fff;
+  }
+  .input {
+    box-shadow: unset !important;
+  }
+  .showmore{
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: bold;
+  }

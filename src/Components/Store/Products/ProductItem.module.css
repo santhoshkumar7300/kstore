@@ -1,0 +1,69 @@
+.overallContainer{
+    width: 200px;
+background-color: white;
+border-radius: 8px;
+box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 2.6px;
+padding: 10px 20px;
+margin: 15px 0px;
+position: relative;
+
+}
+.offerContainer{
+    width: 20%;
+height: 25px;
+background-color: #DD6A57;
+border-radius: 5px;
+display: flex;
+justify-content: center;
+}
+.offer{
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    align-self: center;
+}
+.productImg{
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+.newPrice{
+    font-size: 9px;
+    font-weight: bold;
+}
+.oldPrice{
+    font-size: 9px;
+    font-weight: bold;
+    text-decoration: line-through;
+    color: rgba(0,0,0,0.65);
+    margin-right: 15px;
+}
+.description{
+    width: 70%;
+font-size: 8px;
+font-weight: bold;
+text-align: center;
+margin-bottom: 0;
+}
+.optionsContainer{
+    width: 25px;
+    height: 25px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.optionsImg{
+    width: 15px;
+height: 15px;
+align-self: center;
+}
+.optionsParentContainer{
+    position: absolute;
+right: 10px;
+bottom: 15px;
+display: none;
+}
+.overallContainer:hover .optionsParentContainer{
+    display: block;
+}

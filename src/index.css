@@ -49,6 +49,61 @@ font-size: 12px;
 font-weight: bold;
 }
 
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-size: 100%, 100%;
+  border-radius: 50%;
+}
+.carousel-control-prev {
+  left: -22px !important;
+}
+.carousel-control-prev-icon{
+  background-image: url("../../kstore/src/Assets/modal_left_arrow.png") !important;
+  width: 20px !important;
+  height: 20px !important;
+  display: inline-block;
+  background: no-repeat;
+}
+.carousel-control-prev {
+  left: -22px !important;
+}
+.carousel-control-prev-icon{
+  background-image: url("../../kstore/src/Assets/modal_left_arrow.png") !important;
+  width: 20px !important;
+  height: 20px !important;
+  display: inline-block;
+  background: no-repeat;
+}
+.carousel-control-next-icon{
+  background-image: url("../../kstore/src/Assets/modal_right_arrow.png") !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: inline-block;
+  background: no-repeat;
+}
+.carousel-control-next {
+  right: -22px !important;
+}
+.accordion-button{
+  padding: 15px 0 !important;
+  border-bottom: 1px solid rgba(0,0,0,.125) !important; 
+}
+.accordion-button:not(.collapsed){
+  background-color: white !important;
+}
+.accordion-button:focus{
+  box-shadow: unset !important;
+}
+
+.accordion-button:not(.collapsed)::after{
+  background-image: url("../../kstore/src/Assets/cross.png") !important;
+}
+.accordion-button::after{
+  background-image: url("../../kstore/src/Assets/plus.png") !important;
+}
 /* .react-multi-carousel-item{
   width: 100px !important;
 } */
