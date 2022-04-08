@@ -4,11 +4,11 @@ import cartImg from "../../../Assets/cartImg.svg";
 export default function AddToCart() {
   return (
     <div className={Styles.bg}>
-      <div className={Styles.container + " container bg-white"}>
-        <div>
-          <table>
+      <div className="container bg-white">
+        <div className="d-flex justify-content-center">
+          <table className="mt-5">
             <thead>
-              <tr>
+              <tr className={Styles.heading}>
                 <th className="text-center">Products</th>
                 <th className="text-center">Price</th>
                 <th className="text-center">Quantity</th>
@@ -16,15 +16,15 @@ export default function AddToCart() {
               </tr>
             </thead>
             <tbody>
-              {[...new Array(4)].map((e) => (
-                <tr>
+              {[...new Array(5)].map((e) => (
+                <tr className={Styles.tr}>
                   <td className={Styles.productContainer}>
                     <span className="align-self-center">1</span>
                     <div className={Styles.imgContainer}>
                       <img className={Styles.img} src={cartImg} alt="cart" />
                     </div>
                     <div className="align-self-center">
-                      <p className="mb-0">
+                      <p className={Styles.productDetails + " mb-0"}>
                         Oppo A53s (Mist Blue, 64 GB) (6 GB RAM)
                       </p>
                     </div>
@@ -42,6 +42,32 @@ export default function AddToCart() {
               ))}
             </tbody>
           </table>
+        </div>
+
+        <div className={Styles.cartBtnContainer + " mt-3"}>
+          <button className={Styles.clearCart}>Clear Cart</button>
+          <button className={Styles.updateCart}>Update Cart</button>
+        </div>
+        <div className={Styles.totalContainer + " mt-5"}>
+          <div className="w-25">
+            <h4 className="kstoreFont">Cart Totals</h4>
+            <hr className={Styles.hr} />
+            <div className={Styles.totalDetailsContainer}>
+              <div className="d-flex justify-content-between">
+                <span className={Styles.font}>Sub Total : </span>
+                <span className={Styles.font}>₹2500.00</span>
+              </div>
+              <div className="d-flex justify-content-between">
+                <span className={Styles.font}>Delivery : </span>
+                <span className={Styles.font}>Free</span>
+              </div>
+              <div className="d-flex justify-content-between">
+                <span className={Styles.font}>Total : </span>
+                <span className={Styles.font}>₹2500.00</span>
+              </div>
+            </div>
+            <button className={Styles.checkoutBtn}>Proceed to Checkout</button>
+          </div>
         </div>
       </div>
     </div>

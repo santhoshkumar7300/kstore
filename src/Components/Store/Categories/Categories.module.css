@@ -1,0 +1,75 @@
+.bg{
+    background-color: #F8F3F0;
+    padding: 25px 45px;
+    position: relative;
+}
+.searchInput{
+    border: none;
+    padding: 10px 15px;
+    width: 30%;
+    outline: unset;
+    font-size: 14px;
+    height: 60px;
+    border-radius: 5px 0 0 5px;
+}
+.dropdownContainer{
+    margin-right: 25px;
+}
+.searchBtn{
+    background: #FF7C25;
+border: none;
+color: white;
+font-size: 13px;
+font-weight: bold;
+padding: 10px 45px;
+border-radius: 0 5px 5px 0;
+height: 60px;
+}
+.settingsContainer{
+    width: 60px;
+height: 50px;
+display: flex;
+justify-content: center;
+background-color: white;
+border-radius: 5px;
+}
+.settingsImg{
+    width: 25px;
+}
+.searchParentContainer{
+    padding: 25px 0px;
+}
+
+.dropdownBtn{
+    box-shadow: unset !important;
+    font-size: 13px !important;
+    font-weight: bold !important;
+    width: 10% !important;
+}
+/* .btn-check:active + .btn-success:focus, .btn-check:checked + .btn-success:focus, .btn-success.active:focus, .btn-success:active:focus, .show > .btn-success.dropdown-toggle:focus {
+    box-shadow: unset !important;
+  }
+  .btn-success {
+    color: #000 !important;
+    background-color: white !important;
+    border-color: unset !important;
+    border: none !important;
+  }
+
+  .customBtn .dropdown-toggle::after{
+    display: none !important;
+  } */
+  dropdown .caret{
+      display: none !important;
+  }
+  .categoriesListContainer{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    padding: 25px 0;
+    
+  }
+  .dropdownParent{
+      padding: 25px 0;
+  }
+  
