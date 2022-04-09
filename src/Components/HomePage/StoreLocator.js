@@ -25,7 +25,7 @@ export default function StoreLocator() {
   };
 
   return (
-    <div className={Styles.parentContainer}>
+    <div id="stores" className={Styles.parentContainer}>
       <div className="d-flex justify-content-center">
         <h1 className="text-white kstoreFont">
           Store <span className="orange"> Locator</span>

@@ -2,8 +2,11 @@ import { Form } from "react-bootstrap";
 import Styles from "./FranchiseEnquiry.module.css";
 import person from "../../Assets/person.png";
 import shoppingBag from "../../Assets/shoppingBag.png";
+import black_shopping from "../../Assets/black_shopping.png";
 import store from "../../Assets/white_store.png";
+import black_store from "../../Assets/black_store.png";
 import white_ok from "../../Assets/white_ok.png";
+import black_ok from "../../Assets/black_ok.png";
 import FranchisePersonal from "./FranchisePersonal";
 import FranchiseBusiness from "./FranchiseBusiness";
 import FranchiseStore from "./FranchiseStore";
@@ -138,7 +141,7 @@ export default function FranchiseEnquiry() {
   };
 
   return (
-    <div>
+    <div id="franchaise">
       {loader ? (
         <div className={Styles.loaderParent}>
           <div className={Styles.loader}></div>
@@ -175,7 +178,11 @@ export default function FranchiseEnquiry() {
             <li>
               <img
                 className={Styles.li_shopping}
-                src={shoppingBag}
+                src={
+                  formState === 1 || formState === 2 || formState === 3
+                    ? shoppingBag
+                    : black_shopping
+                }
                 alt="person"
               />
             </li>
@@ -207,7 +214,11 @@ export default function FranchiseEnquiry() {
             }
           >
             <li>
-              <img className={Styles.li_shopping} src={store} alt="store" />
+              <img
+                className={Styles.li_shopping}
+                src={formState === 2 || formState === 3 ? store : black_store}
+                alt="store"
+              />
             </li>
             <span
               style={
@@ -237,7 +248,11 @@ export default function FranchiseEnquiry() {
             }
           >
             <li>
-              <img className={Styles.li_shopping} src={white_ok} alt="person" />
+              <img
+                className={Styles.li_shopping}
+                src={formState === 3 ? white_ok : black_ok}
+                alt="person"
+              />
             </li>
             <span
               style={
@@ -255,8 +270,8 @@ export default function FranchiseEnquiry() {
         <form onSubmit={(e) => e.preventDefault()}>
           {formState === 0 ? (
             <div>
-              <div className="d-flex">
-                <div className="w-50">
+              <div className={Styles.formFirst}>
+                <div className={Styles.firstInputContainer}>
                   <label className="text-white">Name*</label>
                   <div className={Styles.inputContainer} id="name">
                     <input
@@ -272,7 +287,7 @@ export default function FranchiseEnquiry() {
                   ) : null}
                 </div>
 
-                <div className="w-50">
+                <div className={Styles.firstInputContainer}>
                   <label className="text-white">DOB *</label>
 
                   <div className={Styles.AddressinputContainer}>
@@ -305,7 +320,7 @@ export default function FranchiseEnquiry() {
                 <div className="text-danger fs-6">{formik.errors.address}</div>
               ) : null}
 
-              <div className="d-flex mt-4">
+              <div className={Styles.secondInputContainer + " mt-4"}>
                 <div className={Styles.thirdChildContainer}>
                   <label className="text-white">Current Occupation*</label>
                   <div className={Styles.AddressinputContainer}>
@@ -388,7 +403,7 @@ export default function FranchiseEnquiry() {
                 </div>
               </div>
 
-              <div className="d-flex">
+              <div className={Styles.fourthInputContainer}>
                 <div className={Styles.thirdChildContainer}>
                   <label className="text-white">Nationality*</label>
                   <div className={Styles.AddressinputContainer}>
@@ -449,12 +464,17 @@ export default function FranchiseEnquiry() {
             </div>
           ) : formState === 1 ? (
             <div>
-              <div className="d-flex">
+              <div className={Styles.businessContainer}>
                 <label className={Styles.label + " text-white"}>
                   Preferred Business Location
                 </label>
-                <div className="w-100 d-flex justify-content-evenly">
-                  <div className="w-50">
+                <div
+                  className={
+                    Styles.businessFirstContainer +
+                    " w-100 justify-content-evenly"
+                  }
+                >
+                  <div className={Styles.businessFirst}>
                     <label className="text-white">City*</label>
                     <div className={Styles.inputContainer}>
                       <Form.Select
@@ -475,7 +495,7 @@ export default function FranchiseEnquiry() {
                       </div>
                     ) : null}
                   </div>
-                  <div className="w-50">
+                  <div className={Styles.businessFirst}>
                     <label className="text-white">state*</label>
                     <div className={Styles.AddressinputContainer}>
                       <Form.Select
@@ -503,7 +523,7 @@ export default function FranchiseEnquiry() {
                   </div>
                 </div>
               </div>
-              <div className="d-flex mt-5">
+              <div className={Styles.businessSecondContainer + " mt-5 w-100"}>
                 <div className={Styles.thirdChildContainer}>
                   <label className="text-white">Area of store preferred</label>
                   <div className={Styles.inputContainer}>
@@ -535,8 +555,12 @@ export default function FranchiseEnquiry() {
                   ) : null}
                 </div>
                 <div className="d-flex w-100">
-                  <div className="w-100 d-flex justify-content-evenly">
-                    <div className="w-50">
+                  <div
+                    className={
+                      Styles.businessContainer + " w-100 justify-content-evenly"
+                    }
+                  >
+                    <div className={Styles.thirdChildContainer}>
                       <label className="text-white">
                         Convinent time for call*
                       </label>
@@ -555,7 +579,7 @@ export default function FranchiseEnquiry() {
                         </div>
                       ) : null}
                     </div>
-                    <div className="w-50">
+                    <div className={Styles.thirdChildContainer}>
                       <label className="text-white">Refered by*</label>
                       <div className={Styles.AddressinputContainer}>
                         <input
@@ -574,7 +598,12 @@ export default function FranchiseEnquiry() {
                   </div>
                 </div>
               </div>
-              <div className="d-flex w-100 justify-content-between mt-5">
+              <div
+                className={
+                  Styles.businessContainer +
+                  " w-100 justify-content-between mt-5"
+                }
+              >
                 <div className={Styles.businessCheckbox + " d-flex"}>
                   <label className={Styles.businessLabel + " text-white"}>
                     Time frame on starting Business

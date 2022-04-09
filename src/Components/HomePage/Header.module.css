@@ -94,7 +94,7 @@ position: fixed;
     z-index: 1;
   }
   .materialBtn.active::before {
-    transform: scale(15);
+    transform: scale(20);
     background: #f77a26 !important;
   }
   
@@ -205,4 +205,20 @@ position: fixed;
 
   .menuLinks{
       margin-bottom: 100%;
+  }
+
+  @media only screen and (max-width:600px) {
+    .headerContainer{
+      justify-content: unset !important;
+    }
+    .log{
+      max-width: 180px;
+    }
+  }
+
+  @media (min-width:601px) and (max-width:768px) {
+    .menuLinks{
+      margin-bottom: 356px !important;
+    }
+    
   }

@@ -10,7 +10,7 @@ import "react-multi-carousel/lib/styles.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="">
       <ToastContainer hideProgressBar={true} />
       <App />
     </BrowserRouter>

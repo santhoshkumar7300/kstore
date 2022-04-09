@@ -32,10 +32,14 @@ export default function ContactUs() {
   ]);
 
   const mapStyles = {
-    height: "70vh",
+    height: "45vh",
     width: "100%",
     filter: "grayscale(1)",
     marginTop: "25px",
+
+    "@media (max-width: 600px)": {
+      height: "42vh",
+    },
   };
 
   const defaultCenter = {
@@ -44,15 +48,15 @@ export default function ContactUs() {
   };
 
   return (
-    <div className="mt-5">
+    <div id="contact" className="mt-5">
       <div className="d-flex justify-content-center">
         <h1 className="text-white kstoreFont">
           Contact <span className="orange">Us</span>
         </h1>
       </div>
 
-      <div className="container d-flex mt-5">
-        <div className="w-50">
+      <div className={Styles.mapContainer + " container mt-5"}>
+        <div className={Styles.address}>
           <ul>
             <li>
               {addressDetails.map((e) => (
@@ -66,7 +70,7 @@ export default function ContactUs() {
             </li>
           </ul>
         </div>
-        <div className="w-50">
+        <div className={Styles.map}>
           <LoadScript>
             <GoogleMap
               mapContainerStyle={mapStyles}

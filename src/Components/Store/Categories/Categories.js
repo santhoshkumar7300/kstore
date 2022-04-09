@@ -88,7 +88,12 @@ export default function Categories() {
           <button className={Styles.searchBtn}>Search</button>
         </div>
         <div className={Styles.settingsContainer}>
-          <img className={Styles.settingsImg} src={settings} alt="settings" />
+          <img
+            onClick={() => setIsPopup(true)}
+            className={Styles.settingsImg}
+            src={settings}
+            alt="settings"
+          />
         </div>
       </div>
       <div className={Styles.dropdownParent + " d-flex"}>

@@ -106,6 +106,15 @@ font-weight: bold;
   background-image: url("../../kstore/src/Assets/plus.png") !important;
 }
 
+/* .highcharts-credits{
+  display: none;
+}
+.highcharts-grid-line{
+  display: none;
+}
+.highcharts-legend-item {
+display: none !important;
+} */
 
 /* .react-multi-carousel-item{
   width: 100px !important;

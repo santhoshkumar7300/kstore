@@ -1,23 +1,27 @@
 import Styles from "./About.module.css";
 import leftImg from "../../Assets/about.png";
-// import FlowImg from "../../Assets/kstore-flow.svg";
+import FlowImg from "../../Assets/kstore_flow.png";
 // import { ReactComponent as YourSvg } from "../../Assets/kstore-flow.svg";
 
 export default function About() {
   return (
-    <div className={Styles.test + " container"}>
-      <div>
+    <div id="about" className={Styles.test + " container"}>
+      <div data-aos="fade">
         <div className="d-flex justify-content-center">
           <h1 className="text-white kstoreFont">
             About <span className="orange kstoreFont">KSTORe?</span>
           </h1>
         </div>
-        <div className="container d-flex mt-5">
-          <div className="w-50">
+        <div className={Styles.ParentContainer + " container mt-5"}>
+          <div className={Styles.content}>
             <img className={Styles.img} src={leftImg} alt="img" />
           </div>
-          <div className="w-50 mt-5">
-            <p className="text-white text-start fs-6 kstoreFont3">
+          <div className={Styles.content + " mt-5"}>
+            <p
+              className={
+                Styles.para + " text-white text-justify fs-6 kstoreFont3"
+              }
+            >
               KANSAS - The One Big Wallet is a prosperous 5 years old digital
               payment concern serving b2b market enabling retailers to earn high
               ROI with low investment. The services offered are Prepay and DTH
@@ -28,7 +32,11 @@ export default function About() {
               venture “KSTORe”
             </p>
             <br />
-            <p className="text-white text-start fs-6 kstoreFont3">
+            <p
+              className={
+                Styles.para + " text-white text-justify fs-6 kstoreFont3"
+              }
+            >
               KSTORe - Phygital store is a new generation idea combining
               ecommerce and physical store, creating enormous opportunities to
               earn with less investment. K-store is a franchise opportunity
@@ -40,9 +48,12 @@ export default function About() {
         </div>
       </div>
       <div className="container">
-        {/* <img src={flowImg} alt="img" /> */}
-        {/* <FlowImg /> */}
-        {/* <YourSvg /> */}
+        <img
+          data-aos="fade"
+          src={FlowImg}
+          className={Styles.flowImg}
+          alt="img"
+        />
       </div>
     </div>
   );

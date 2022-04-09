@@ -24,7 +24,7 @@ export default function BrandPartners() {
     },
   };
   return (
-    <div className="mt-5">
+    <div id="partners" className="mt-5">
       <div className="d-flex justify-content-center">
         <h1 className="text-white kstoreFont">
           Brand <span className="orange kstoreFont">Partners</span>
@@ -47,10 +47,17 @@ export default function BrandPartners() {
         responsive={responsive}
         className="container"
       >
-        {[...new Array(20)].map((e) => (
+        {[...new Array(20)].map((e, index) => (
           <div>
-            <img className={Styles.imgContainer} src={sumsung} alt="sumsung" />
-            {/* <img className={Styles.lgImg} src={lg} alt="lg" /> */}
+            {index % 2 === 0 ? (
+              <img
+                className={Styles.imgContainer}
+                src={sumsung}
+                alt="sumsung"
+              />
+            ) : (
+              <img className={Styles.lgImg} src={lg} alt="lg" />
+            )}
           </div>
         ))}
       </Carousel>

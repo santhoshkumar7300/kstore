@@ -32,10 +32,12 @@
     cursor: pointer;
 }
 .dateContainer{
-    width: 60% !important;
+    width: 70% !important;
     background: rgba(0,0,0,0.03);
     cursor: pointer;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
 }
 .overallContainer{
     width: 100%;
@@ -83,4 +85,12 @@ justify-content: center;
 float: left;
 height: 500px;
 overflow: auto;
+}
+.date{
+    font-size: 12px;
+font-weight: bold;
+align-self: center;
+}
+.dateImg{
+    width: 19px;
 }

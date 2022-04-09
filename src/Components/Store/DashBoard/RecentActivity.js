@@ -5,6 +5,7 @@ import settings2 from "../../../Assets/settings2.svg";
 import * as React from "react";
 import purchase from "../../../Assets/kstore_table_purchase.svg";
 import Test from "./test";
+import cal from "../../../Assets/cal.svg";
 
 export default function RecentActivity() {
   const [value, setValue] = useState([null, null]);
@@ -24,7 +25,10 @@ export default function RecentActivity() {
         </div>
         <div className={Styles.rightContainer}>
           <div className={Styles.dateContainer}>
-            <p>santhosh</p>
+            <div className="d-flex justify-content-evenly w-100">
+              <img className={Styles.dateImg} src={cal} alt="calender" />
+              <span className={Styles.date}>6 mar 22 - 28 Mar 22</span>
+            </div>
           </div>
           <div className={Styles.settings2Container}>
             <img

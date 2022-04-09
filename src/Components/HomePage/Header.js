@@ -34,7 +34,7 @@ export default function Header(props) {
   };
 
   return (
-    <div className={Styles.test + " pt-4"}>
+    <div id="home" className={Styles.test + " pt-4"}>
       <div>
         <div
           style={{ opacity: isMenu ? "0" : "1" }}
@@ -75,51 +75,51 @@ export default function Header(props) {
               <nav>
                 <ul className={Styles.menuLinks}>
                   <li className="p-0">
-                    <a className="kstoreFont fs-3" href="index.php">
+                    <a className="kstoreFont fs-2" href="#home">
                       Home
                     </a>
                   </li>
                   <li className="p-0">
-                    <a className="kstoreFont fs-3" href="index.php#about">
+                    <a className="kstoreFont fs-2" href="#about">
                       About KSTORe
                     </a>
                   </li>
                   <li className="p-0">
-                    <a className="kstoreFont fs-3" href="#highlights">
+                    <a className="kstoreFont fs-2" href="#highlights">
                       Key Highlights
                     </a>
                   </li>
                   <li className="p-0">
-                    <a className="kstoreFont fs-3" href="#stores">
+                    <a className="kstoreFont fs-2" href="#stores">
                       Store Locator
                     </a>
                   </li>
                   <li className="p-0">
-                    <a className="kstoreFont fs-3" href="#franchaise">
+                    <a className="kstoreFont fs-2" href="#franchaise">
                       For Franchise
                     </a>
                   </li>
                   <li className="p-0">
-                    <a className="kstoreFont fs-3" href="#testimonial">
+                    <a className="kstoreFont fs-2" href="#testimonial">
                       Testimonials
                     </a>
                   </li>
                   <li className="p-0">
-                    <a className="kstoreFont fs-3" href="#partners">
+                    <a className="kstoreFont fs-2" href="#partners">
                       Brand Partners
                     </a>
                   </li>
                   <li className="p-0">
-                    <a className="kstoreFont fs-3" href="#contact">
+                    <a className="kstoreFont fs-2" href="#contact">
                       Contact Us
                     </a>
                   </li>
 
-                  <li className="p-0">
+                  {/* <li className="p-0">
                     <Link to="/auth" className="kstoreFont fs-3">
                       Login
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </nav>
             </div>

@@ -9,6 +9,7 @@ import search from "../../../Assets/search.svg";
 import RecentActivity from "./RecentActivity";
 import PaymentDetails from "./Payment";
 import Wallet from "./Wallet";
+import Chart from "./Chart";
 
 export default function Store() {
   return (
@@ -77,7 +78,8 @@ export default function Store() {
             </h2>
             <div className={Styles.rightChartContainer}>
               <div className={Styles.leftSideChart}>
-                <p>chart</p>
+                <Chart />
+                {/* <p>santhosh</p> */}
               </div>
               <div className={Styles.rightSideChart}>
                 <div className={Styles.rightSideChild}>

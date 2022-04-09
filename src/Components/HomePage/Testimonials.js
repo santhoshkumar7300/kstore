@@ -24,7 +24,7 @@ export default function Testmonials() {
     },
   };
   return (
-    <div className="mt-5">
+    <div id="testimonial" className="mt-5">
       <div className="d-flex justify-content-center">
         <h1 className="text-white kstoreFont">
           Client <span className="orange">Testimonials</span>
@@ -60,7 +60,7 @@ export default function Testmonials() {
             <h5 className="mt-3">Our dealer feedback</h5>
             <p>Lorem Ipsum has been the industry's standard dummy text ever.</p>
             {/* <Link>Readmore...</Link> */}
-            <h4>Readmore...</h4>
+            <h4 className="orange fs-6">Readmore...</h4>
           </div>
         ))}
       </Carousel>

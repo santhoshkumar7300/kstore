@@ -50,15 +50,15 @@ export default function KeyHighlights() {
   ]);
 
   return (
-    <div className="mt-5">
+    <div id="highlights" className="mt-5">
       <div className="d-flex justify-content-center">
         <h1 className="text-white fs-1 kstoreFont">
           Key <span className="orange">Highlights</span>{" "}
         </h1>
       </div>
 
-      <div className="container d-flex mt-5">
-        <div className="w-50">
+      <div className={Styles.parentContainer + " container mt-5"}>
+        <div className={Styles.content}>
           {leftData.map((e) => (
             <ul>
               <li>
@@ -74,7 +74,7 @@ export default function KeyHighlights() {
             </ul>
           ))}
         </div>
-        <div className="w-50">
+        <div className={Styles.content}>
           {rightData.map((e) => (
             <ul>
               <li>
