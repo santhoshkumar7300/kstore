@@ -16,6 +16,9 @@ color: white;
 font-size: 14px;
 font-weight: bold;
 }
+.link:hover{
+    color: #ff7b26;
+}
 .linkContainer{
     width: 55%;
     align-self: center;
@@ -23,9 +26,13 @@ font-weight: bold;
     justify-content: space-evenly;
 }
 .LogoImg{
-width: 25px;
+width: 15px;
 cursor: pointer;
 }
+.LogoImg2{
+    width: 15px;
+    cursor: pointer;
+    }
 .LogoImgContainer{
     width: 20%;
 align-self: center;
@@ -35,3 +42,55 @@ justify-content: space-evenly;
 .overallContainer{
     padding: 13px 0;
 }
+
+@media (max-width:600px) {
+
+    .linkContainer{
+        display: none;
+    }
+    .LogoImg2{
+        display: none;
+    }
+    .logoContainer{
+        width: 85% !important;
+        justify-content: space-around !important;
+    }
+    .link{
+        color: black !important;
+        width: 100% !important;
+    }
+    .link:hover{
+        color: #ff7b26;
+    }
+    .overallContainer{
+        justify-content: center !important;
+    }
+}
+
+@media (min-width:601px) and (max-width:768px) {
+    .linkContainer{
+        display: none;
+    }
+    .LogoImg2{
+        display: none;
+    }
+    .logoContainer{
+        width: 85% !important;
+        justify-content: space-around !important;
+    }
+    .link{
+        color: black !important;
+        width: 100% !important;
+    }
+    .link:hover{
+        color: #ff7b26;
+    }
+    .overallContainer{
+        justify-content: center !important;
+    }
+}
+
+@media (min-width:769px) and (max-width:992px) {
+    
+}   
+

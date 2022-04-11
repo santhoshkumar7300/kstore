@@ -100,3 +100,54 @@ border-radius: 5px;
 tbody{
     height: unset !important;
 }
+.mblCartotal{
+    width: 25%;
+}
+.td{
+    font-size: 13px;
+}
+
+@media only screen and (max-width:600px) {
+    .mblCartotal{
+        width: 100% !important;
+    }
+    .totalContainer{
+        padding-right: 0 !important;
+        padding: 0 60px !important;
+    }
+    .cartBtnContainer{
+        display: flex;
+        padding: 0 !important;
+    }
+    .table{
+        overflow-x: auto !important;
+    }
+    .productDetails{
+        width: 209px !important;
+        font-size: 12px;
+        margin-left: 15px;
+    }
+    .productContainer{
+        padding-left: 300px;
+    }
+    .imgContainer{
+        margin-left: 15px;
+    }
+    .td{
+        font-size: 12px;
+    }
+  }
+  
+  @media (min-width:601px) and (max-width:768px) {
+      .mblCartotal{
+          width: 50% !important;
+          padding: 0 45px;
+      }
+      .totalContainer{
+          padding-right: 0 !important;
+      }
+  }
+  
+  @media (min-width:769px) and (max-width:992px) {
+      
+  }   

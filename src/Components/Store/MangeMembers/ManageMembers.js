@@ -28,7 +28,7 @@ export default function ManageMembers() {
         <div
           className={Styles.titleContainer + " d-flex justify-content-between"}
         >
-          <h4 className="kstoreFont">Manage Members</h4>
+          <h4 className="kstoreFont align-self-center">Manage Members</h4>
           <div className={Styles.btnContainer}>
             <div className={Styles.searchContainer}>
               <img className={Styles.img} src={search} alt="search" />
@@ -64,15 +64,15 @@ export default function ManageMembers() {
               <tbody>
                 <tr>
                   <td className={Styles.td}>1</td>
-                  <td>Ram bala</td>
+                  <td className={Styles.font}>Ram bala</td>
                   <td>
-                    <p className="mb-0">Wednesday</p>
-                    <p className="mb-0">16 April, 2022</p>
+                    <p className={Styles.font + " mb-0"}>Wednesday</p>
+                    <p className={Styles.font + " mb-0"}>16 April, 2022</p>
                   </td>
-                  <td>+91 987456321</td>
-                  <td>Lorum ipsum</td>
-                  <td>₹ 650.00</td>
-                  <td>Pending</td>
+                  <td className={Styles.font}>+91 987456321</td>
+                  <td className={Styles.font}>Lorum ipsum</td>
+                  <td className={Styles.font}>₹ 650.00</td>
+                  <td className={Styles.font}>Pending</td>
                   <td>
                     <div className="d-flex justify-content-evenly">
                       <div className={Styles.editContainer}>
@@ -108,7 +108,7 @@ export default function ManageMembers() {
             </select>
             <span className="kstoreFont align-self-center">out of 80</span>
           </div>
-          <PaginatedItems itemsPerPage={3} />
+          {/* <PaginatedItems itemsPerPage={3} /> */}
         </div>
       </div>
     </div>

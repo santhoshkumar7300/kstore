@@ -115,11 +115,11 @@ export default function Header(props) {
                     </a>
                   </li>
 
-                  {/* <li className="p-0">
+                  <li className="p-0">
                     <Link to="/auth" className="kstoreFont fs-3">
                       Login
                     </Link>
-                  </li> */}
+                  </li>
                 </ul>
               </nav>
             </div>

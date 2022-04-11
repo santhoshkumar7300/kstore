@@ -49,8 +49,118 @@ justify-content: space-between;
 }
 .selectContainer{
     width: 72%;
+    align-self: center;
 }
 .select{
     border: none;
 box-shadow: unset;
 }
+
+.mblFilter{
+    display: none;
+}
+.select{
+    border: none !important;
+    box-shadow: unset !important;
+    font-size: 12px !important;
+}
+.sort{
+    font-size: 12px !important;
+}
+
+.mblProducts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.sortText{
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width:600px) {
+  .leftContainer{
+      display: none;
+  }
+  .mblFilter{
+      display: block;
+  }
+  .rightContainer{
+    width: 100% !important;
+}
+.filter{
+    width: 100px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 99px;
+    padding: 4px 0;
+}
+.mblProducts{
+    justify-content: space-evenly !important;
+    margin-top: 25px;
+}
+.leftHeading{
+    font-size: 12px !important;
+}
+.sortText{
+    width: 50% !important;
+}
+.rightContainer{
+    padding: 30px 15px !important;
+    padding-top:65px !important;
+}
+}
+
+@media (min-width:601px) and (max-width:768px) {
+    .leftContainer{
+        display: none;
+    }
+    .rightContainer{
+        width: 100% !important;
+    }
+    .filter{
+        width: 100px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+        background-color: white;
+        cursor: pointer;
+        position: absolute;
+        right: 48px;
+        top: 99px;
+        padding: 4px 0;
+    }
+    .sortText{
+        width: 35% !important;
+    }
+    .mblFilter{
+        display: block;
+    }
+    .selectContainer{
+        align-self: center !important;
+    }
+}
+
+@media (min-width:769px) and (max-width:992px) {
+    
+}   
+
+/* @include media-breakpoint-up(sm){
+    .product-container{
+        background-color: black !important;
+        justify-content: center !important;
+      }
+} */
+
+
+/* @include media-breakpoints-down(sm){
+    .sortText{
+        font-size:12px !important
+    }
+} */

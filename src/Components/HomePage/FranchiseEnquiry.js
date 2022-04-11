@@ -78,6 +78,7 @@ export default function FranchiseEnquiry() {
 
     onSubmit: (values) => {
       handleData(values);
+      setLoader(true);
     },
   });
   const handleCity = (data) => {
@@ -775,7 +776,6 @@ export default function FranchiseEnquiry() {
               onClick={() => {
                 if (formState === 2) {
                   formik.handleSubmit();
-                  setLoader(true);
                 } else {
                   setFormState(formState + 1);
                 }

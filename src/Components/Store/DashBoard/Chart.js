@@ -31,6 +31,7 @@ export default function Chart() {
         // "Dec",
       ],
       crosshair: true,
+      gridLineColor: "#fff",
     },
     yAxis: {
       min: 0,
@@ -55,11 +56,13 @@ export default function Chart() {
     },
     series: [
       {
+        showInLegend: false,
         name: "",
         color: "#000",
         data: [4.9, 7.5, 7.4, 6.2, 6.0, 5.0, 10.6],
       },
       {
+        showInLegend: false,
         name: "",
         color: "#FF842E",
         data: [4.9, 7.5, 7.4, 6.2, 6.0, 5.0, 10.6],

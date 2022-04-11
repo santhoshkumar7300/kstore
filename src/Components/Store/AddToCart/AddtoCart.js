@@ -5,7 +5,7 @@ export default function AddToCart() {
   return (
     <div className={Styles.bg}>
       <div className="container bg-white">
-        <div className="d-flex justify-content-center">
+        <div className={Styles.table + " d-flex justify-content-center"}>
           <table className="mt-5">
             <thead>
               <tr className={Styles.heading}>
@@ -29,7 +29,7 @@ export default function AddToCart() {
                       </p>
                     </div>
                   </td>
-                  <td>₹ 18,000.00</td>
+                  <td className={Styles.td}>₹ 18,000.00</td>
                   <td>
                     <input
                       className={Styles.productCount}
@@ -37,7 +37,7 @@ export default function AddToCart() {
                       defaultValue={1}
                     />
                   </td>
-                  <td className="orange">₹ 18,000.00</td>
+                  <td className={Styles.td + " orange"}>₹ 18,000.00</td>
                 </tr>
               ))}
             </tbody>
@@ -49,7 +49,7 @@ export default function AddToCart() {
           <button className={Styles.updateCart}>Update Cart</button>
         </div>
         <div className={Styles.totalContainer + " mt-5"}>
-          <div className="w-25">
+          <div className={Styles.mblCartotal}>
             <h4 className="kstoreFont">Cart Totals</h4>
             <hr className={Styles.hr} />
             <div className={Styles.totalDetailsContainer}>

@@ -106,6 +106,15 @@ font-weight: bold;
   background-image: url("../../kstore/src/Assets/plus.png") !important;
 }
 
+.rdrDefinedRangesWrapper{
+  display: none !important;
+}
+.rdrDateRangePickerWrapper{
+  position: absolute;
+right: 33%;
+top: 90%;
+}
+
 /* .highcharts-credits{
   display: none;
 }

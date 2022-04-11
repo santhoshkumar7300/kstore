@@ -3,7 +3,7 @@ import About from "./About";
 import BrandPartners from "./BrandPartners";
 import ContactUs from "./ContactUs";
 import FranchiseEnquiry from "./FranchiseEnquiry";
-
+import SignIn from "../Authentication/SignIn";
 import Header from "./Header";
 import Styles from "./Home.module.css";
 import KeyHighlights from "./KeyHighlights";

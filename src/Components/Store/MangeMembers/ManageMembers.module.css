@@ -67,7 +67,9 @@ display: flex;
 justify-content: center;
 }
 .editImg{
-    width: 20px;
+    width: 19px;
+    height: 21px;
+    align-self: center;
 }
 .delContainer{
     width: 40px;
@@ -85,6 +87,7 @@ justify-content: center;
 }
 .td{
     padding: 35px 0;
+    font-size: 12px;
 }
 .pageSelect{
     width: 75px !important;
@@ -99,6 +102,9 @@ box-shadow: unset !important;
   position: fixed;
   top: 0;
   background-color: rgba(0,0,0,0.5);
+  }
+  .font{
+      font-size: 12px !important;
   }
   
   .loader {
@@ -120,3 +126,25 @@ box-shadow: unset !important;
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+
+  @media only screen and (max-width:600px) {
+  .titleContainer{
+      display: block !important;
+  }
+}
+
+@media (min-width:601px) and (max-width:768px) {
+    
+}
+
+@media (min-width:769px) and (max-width:992px) {
+    
+}   
+
+
+/* @include media-breakpoint-up(sm){
+    .titleContainer{
+        display: block;
+    }
+
+} */

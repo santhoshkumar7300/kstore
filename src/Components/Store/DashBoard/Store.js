@@ -58,7 +58,7 @@ export default function Store() {
               </div>
             </h2>
           </div>
-          <div className="mt-5">
+          <div className={Styles.ourService + " mt-5"}>
             <h2 className="kstoreFont fs-3 text-uppercase">
               Our <span className="orange">Services</span>
             </h2>
@@ -103,7 +103,7 @@ export default function Store() {
             <div className={Styles.moneyContainer}>
               <div className={Styles.moneyChildContainer}>
                 <div>
-                  <div className="mt-3">
+                  <div className={Styles.transfer + " mt-3"}>
                     <p className={Styles.moneyTitle + " mb-0 mt-4"}>
                       Total Balance
                     </p>

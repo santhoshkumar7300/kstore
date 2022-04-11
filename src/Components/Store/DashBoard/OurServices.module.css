@@ -21,3 +21,16 @@ margin-right: 19px;
     font-weight: bold;
     padding-top: 7px;
 }
+@media only screen and (max-width:600px) {
+    .parentContainer{
+        display: none;
+    }
+}
+
+@media (min-width:601px) and (max-width:768px) {
+    
+}
+
+@media (min-width:769px) and (max-width:992px) {
+    
+}   
