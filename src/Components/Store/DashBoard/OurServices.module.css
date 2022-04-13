@@ -10,11 +10,12 @@ justify-content: center;
 height: 38px;
 }
 .parentContainer{
-    width: 25%;
+    width: 23%;
     display: flex;
 justify-content: center;
 flex-wrap: wrap;
 margin-right: 19px;
+padding: 15px 0;
 }
 .serviceDescription{
     font-size: 12px;

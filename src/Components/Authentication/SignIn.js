@@ -30,7 +30,7 @@ function SignIn() {
           <h3 className="kstoreFont">
             Login to <span className="orange">KStore</span>{" "}
           </h3>
-          <p className={Styles.loginRightPara + " w-75 fw-bold"}>
+          <p className={Styles.loginRightPara + " fw-bold"}>
             Welcome back! login with your data that you entered during
             registration
           </p>

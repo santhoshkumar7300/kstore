@@ -44,13 +44,13 @@ p {
 .moneyBtn{
 color: white;
 border: none;
-padding: 3px 14px;
+padding: 6px 17px;
 border-radius: 6px;
-font-size: 12px;
+font-size: 10px;
 font-weight: bold;
 }
 
-.carousel-control-prev-icon, .carousel-control-next-icon {
+/* .carousel-control-prev-icon, .carousel-control-next-icon {
   height: 100px;
   width: 100px;
   outline: black;
@@ -64,24 +64,24 @@ font-weight: bold;
 .carousel-control-prev-icon{
   background-image: url("../../kstore/src/Assets/modal_left_arrow.png") !important;
   width: 20px !important;
-  height: 20px !important;
+  height: 27px !important;
   display: inline-block;
   background: no-repeat;
-}
+} */
 .carousel-control-prev {
   left: -22px !important;
 }
 .carousel-control-prev-icon{
   background-image: url("../../kstore/src/Assets/modal_left_arrow.png") !important;
   width: 20px !important;
-  height: 20px !important;
+  height: 27px !important;
   display: inline-block;
   background: no-repeat;
 }
 .carousel-control-next-icon{
   background-image: url("../../kstore/src/Assets/modal_right_arrow.png") !important;
-  width: 40px !important;
-  height: 40px !important;
+  width: 20px !important;
+  height: 27px !important;
   display: inline-block;
   background: no-repeat;
 }
@@ -111,8 +111,37 @@ font-weight: bold;
 }
 .rdrDateRangePickerWrapper{
   position: absolute;
-right: 33%;
-top: 90%;
+right: 21%;
+top: 10%;
+}
+
+@media only screen and (max-width:450px) {
+  .rdrDateRangePickerWrapper{
+    right: -28px;
+    top: 100px;
+  }
+}
+
+@media (min-width:451px) and (max-width:768px) {
+    
+}
+
+@media (min-width:769px) and (max-width:992px) {
+    .rdrDateRangePickerWrapper{
+      right: 14%;
+    }
+    .moneyBtn{
+      font-size: 15px;
+      padding: 10px 70px;
+    }
+}
+
+@media (min-width:923px) and (max-width:1140px) {
+    
+}
+
+@media (min-width:1141px) and (max-width:1200px) {
+    
 }
 
 /* .highcharts-credits{

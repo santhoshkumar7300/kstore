@@ -1,6 +1,6 @@
 import Styles from "./Categories.module.css";
 import settings from "../../../Assets/recentActivity_settings.svg";
-import { Dropdown } from "react-bootstrap";
+import { Dropdown, Form } from "react-bootstrap";
 import CategoriesList from "./CategoriesList";
 import React, { useState } from "react";
 import CategoriesOptions from "./CategoriesOptions";
@@ -72,6 +72,8 @@ export default function Categories() {
 
   const [isPopup, setIsPopup] = useState(false);
 
+  const [isOptions, setIsOptions] = useState(false);
+
   return (
     <div className={Styles.bg}>
       <div
@@ -96,28 +98,45 @@ export default function Categories() {
           />
         </div>
       </div>
-      <div className={Styles.dropdownParent + " d-flex"}>
-        {data.map((e) => (
-          <Dropdown className={Styles.dropdownContainer}>
-            <Dropdown.Toggle
-              className={Styles.dropdown}
-              variant="white"
-              id="dropdown-basic"
-              style={{
-                boxShadow: "unset",
-                backgroundColor: "white",
-                fontSize: "13px",
-                fontWeight: "bold",
-                width: "200px",
-                height: "50px",
-                borderRadius: "8px",
-              }}
+      <div>
+        <div className={Styles.dropdownParent + " d-flex"}>
+          {/* {data.map((e) => (
+            <Form.Select
+              value="santhosh"
+              className={Styles.selectOptions}
+              onChange={(e) => console.log(e.target.value, "====")}
+              aria-label="Default select example"
             >
-              {e.name}
-            </Dropdown.Toggle>
-            <CategoriesOptions data={e.subItems} />
-          </Dropdown>
-        ))}
+              <option>{e.name}</option>
+              {e.subItems.map((e) => (
+                <option value="1">{e}</option>
+              ))}
+            </Form.Select>
+          ))} */}
+
+          {data.map((e, index) => (
+            <Dropdown className={Styles.dropdownContainer}>
+              <Dropdown.Toggle
+                className={Styles.dropdown}
+                variant="white"
+                id="dropdown-basic"
+                style={{
+                  boxShadow: "unset",
+                  backgroundColor: "white",
+                  fontSize: "13px",
+                  fontWeight: "bold",
+                  width: "200px",
+                  height: "50px",
+                  borderRadius: "8px",
+                }}
+                onChange={(e) => console.log(e.target.value, "====")}
+              >
+                {e.name}
+              </Dropdown.Toggle>
+              <CategoriesOptions data={e.subItems} />
+            </Dropdown>
+          ))}
+        </div>
       </div>
       <div className={Styles.categoriesListContainer}>
         {[...new Array(20)].map((e) => (

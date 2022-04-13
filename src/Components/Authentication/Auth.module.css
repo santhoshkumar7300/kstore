@@ -8,6 +8,7 @@
 }
 .loginRightPara{
     color: rgba(0,0,0,0.7);
+    width: 75%;
 }
 .visibleImg{
     width: 20px;
@@ -55,4 +56,68 @@ border-radius: 9px;
 }
 .errorMsg{
     font-size: 12px;
+}
+
+
+@media only screen and (max-width:600px) {
+  .loginRightContainer{
+      width: 100%;
+      margin: 0;
+      padding: 15px 25px;
+  }
+  .inputContainer{
+      width: 100%;
+  }
+  .passwordInput{
+      width: 90%;
+  }
+  .loginBtn{
+      width: 100%;
+  }
+  .loginRightPara{
+      width: 100%;
+      font-size: 12px;
+  }
+}
+
+@media (min-width:601px) and (max-width:768px) {
+    .loginRightContainer{
+        margin: 0;
+        width: 55%;
+        padding: 15px 25px;
+    }
+    .loginRightPara{
+        width: 100%;
+        font-size: 13px;
+    }
+    .inputContainer{
+        width: 100%;
+    }
+    .passwordInput{
+        width: 90%;
+    }
+    .loginBtn{
+        width: 100%;
+    }
+}
+
+@media (min-width:769px) and (max-width:992px) {
+    .loginRightContainer{
+        margin: 0;
+        width: 55%;
+        padding: 15px 25px;
+    }
+    .loginRightPara{
+        width: 100%;
+        font-size: 13px;
+    }
+    .inputContainer{
+        width: 100%;
+    }
+    .passwordInput{
+        width: 90%;
+    }
+    .loginBtn{
+        width: 100%;
+    }
 }

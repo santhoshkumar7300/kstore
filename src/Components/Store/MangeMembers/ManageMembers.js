@@ -15,7 +15,9 @@ export default function ManageMembers() {
     setIsLoader(false);
   }, [showTableData]);
 
-  console.log(showTableData, "====selectpagenum");
+  const handlePage = (data) => {
+    console.log(data);
+  };
 
   return (
     <div className={Styles.bg}>
@@ -24,10 +26,12 @@ export default function ManageMembers() {
           <div className={Styles.loader}></div>
         </div>
       ) : null}
+
+      <div className={Styles.mblAddBtn}>
+        <img className={Styles.addImg} src={newMember} alt="new" />
+      </div>
       <div className={Styles.overallBody + " container bg-white"}>
-        <div
-          className={Styles.titleContainer + " d-flex justify-content-between"}
-        >
+        <div className={Styles.titleContainer}>
           <h4 className="kstoreFont align-self-center">Manage Members</h4>
           <div className={Styles.btnContainer}>
             <div className={Styles.searchContainer}>
@@ -46,51 +50,63 @@ export default function ManageMembers() {
             </div>
           </div>
         </div>
-        <div>
-          <table>
-            <thead className={Styles.heading}>
-              <tr>
-                <th className="text-center">S.No</th>
-                <th className="text-center">User Name</th>
-                <th className="text-center">Day &amp; Date</th>
-                <th className="text-center">Mobile Number</th>
-                <th className="text-center">Type</th>
-                <th className="text-center">Amount</th>
-                <th className="text-center">Status</th>
-                <th className="text-center">Action</th>
-              </tr>
-            </thead>
-            {[...new Array(showTableData)].map((e) => (
-              <tbody>
+        <div className={Styles.tableParentContainer}>
+          <div className={Styles.tableChildContainer}>
+            <table>
+              <thead className={Styles.heading}>
                 <tr>
-                  <td className={Styles.td}>1</td>
-                  <td className={Styles.font}>Ram bala</td>
-                  <td>
-                    <p className={Styles.font + " mb-0"}>Wednesday</p>
-                    <p className={Styles.font + " mb-0"}>16 April, 2022</p>
-                  </td>
-                  <td className={Styles.font}>+91 987456321</td>
-                  <td className={Styles.font}>Lorum ipsum</td>
-                  <td className={Styles.font}>₹ 650.00</td>
-                  <td className={Styles.font}>Pending</td>
-                  <td>
-                    <div className="d-flex justify-content-evenly">
-                      <div className={Styles.editContainer}>
-                        <img className={Styles.editImg} src={edit} alt="edit" />
-                      </div>
-                      <div className={Styles.delContainer}>
-                        <img className={Styles.delImg} src={del} alt="del" />
-                      </div>
-                    </div>
-                  </td>
+                  <th className={Styles.thFont + " text-center"}>S.No</th>
+                  <th className={Styles.thFont + " text-center"}>User Name</th>
+                  <th className={Styles.thFont + " text-center"}>
+                    Day &amp; Date
+                  </th>
+                  <th className={Styles.thFont + " text-center"}>
+                    Mobile Number
+                  </th>
+                  <th className={Styles.thFont + " text-center"}>Type</th>
+                  <th className={Styles.thFont + " text-center"}>Amount</th>
+                  <th className={Styles.thFont + " text-center"}>Status</th>
+                  <th className={Styles.thFont + " text-center"}>Action</th>
                 </tr>
-              </tbody>
-            ))}
-          </table>
+              </thead>
+              {[...new Array(showTableData)].map((e) => (
+                <tbody>
+                  <tr>
+                    <td className={Styles.td}>1</td>
+                    <td className={Styles.font}>Ram bala</td>
+                    <td>
+                      <p className={Styles.font + " mb-0"}>Wednesday</p>
+                      <p className={Styles.font + " mb-0"}>16 April, 2022</p>
+                    </td>
+                    <td className={Styles.font}>+91 987456321</td>
+                    <td className={Styles.font}>Lorum ipsum</td>
+                    <td className={Styles.font}>₹ 650.00</td>
+                    <td className={Styles.font}>Pending</td>
+                    <td>
+                      <div className="d-flex justify-content-evenly">
+                        <div className={Styles.editContainer}>
+                          <img
+                            className={Styles.editImg}
+                            src={edit}
+                            alt="edit"
+                          />
+                        </div>
+                        <div className={Styles.delContainer}>
+                          <img className={Styles.delImg} src={del} alt="del" />
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              ))}
+            </table>
+          </div>
         </div>
-        <div>
+        <div className="d-flex justify-content-between">
           <div className="d-flex">
-            <span className="kstoreFont align-self-center">Rows Per Page</span>
+            <span className={Styles.rowsFont + " kstoreFont align-self-center"}>
+              Rows Per Page
+            </span>
             <select
               className={Styles.pageSelect + " form-select"}
               aria-label="Default select example"
@@ -106,9 +122,34 @@ export default function ManageMembers() {
               <option value="50">50</option>
               <option value="100">100</option>
             </select>
-            <span className="kstoreFont align-self-center">out of 80</span>
+            <span className={Styles.rowsFont + " kstoreFont align-self-center"}>
+              out of 80
+            </span>
           </div>
-          {/* <PaginatedItems itemsPerPage={3} /> */}
+          <div>
+            <ReactPaginate
+              previousLabel="<"
+              nextLabel=">"
+              breakLabel="..."
+              pageCount={25}
+              marginPagesDisplayed={3}
+              onPageChange={handlePage}
+              containerClassName={"pagination m-0"}
+              pageClassName={"page-item"}
+              pageLinkClassName={
+                "page-link  rounded-3 pt-1 pb-1 ps-2 pe-2 border-0 shadow-none"
+              }
+              previousClassName={"page-item"}
+              previousLinkClassName={
+                "page-link border-0 text-dark bg-light shadow-none me-1"
+              }
+              nextClassName={"page-item "}
+              nextLinkClassName={
+                "page-link border-0 text-dark bg-light shadow-none ms-1"
+              }
+              activeClassName={"active"}
+            />
+          </div>
         </div>
       </div>
     </div>

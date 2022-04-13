@@ -97,17 +97,39 @@ align-self: center;
 .td{
     font-size: 13px;
 }
-@media only screen and (max-width:600px) {
- .rightContainer{
-     width: 70% !important;
- }
- .td{
-     font-size: 10px !important;
- }
 
+
+
+
+@media only screen and (max-width:450px) {
+    .rightContainer{
+        width: 100% !important;
+        padding-top: 15px;
+    }
+    .td{
+        font-size: 10px !important;
+    }
+    .overallContainer{
+        display: block;
+    }
+    .leftContainer{
+        width: 55%;
+        justify-content: space-evenly;
+    }
+    .rdrDateRangePickerWrapper{
+        right: 4%;
+        top: 15%;
+    }
+    .tableContainer{
+        width: 405px;
+    }
+    .tableParentContainer{
+        overflow-x: auto;
+    }
 }
 
-@media (min-width:601px) and (max-width:768px) {
+
+@media (min-width:451px) and (max-width:768px) {
     .rightContainer{
         width: 70% !important;
     }
@@ -117,5 +139,15 @@ align-self: center;
 }
 
 @media (min-width:769px) and (max-width:992px) {
+    .leftContainer{
+        width: 17%;
+    }
+}
+
+@media (min-width:923px) and (max-width:1140px) {
     
-}   
+}
+
+@media (min-width:1141px) and (max-width:1200px) {
+    
+}

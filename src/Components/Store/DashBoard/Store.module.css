@@ -87,6 +87,7 @@ margin-top: 25px;
 .leftSideChart{
     width: 50%;
     float: left;
+    padding: 0 22px;
 }
 .rightSideChart{
     width: 50%;
@@ -171,8 +172,9 @@ justify-content: center;
 width: 100%;
 float: left;
 background: white;
-padding: 22px 32px;
+padding: 22px 30px;
 border-radius: 10px;
+position: relative;
 }
 .lastContainer{
     width: 29%;
@@ -283,7 +285,7 @@ align-self: center;
     }
     .earningContainer{
         width: 15%;
-        height: 67px;
+        height: 45px;
         margin-top: 23px !important;
     }
     
@@ -338,5 +340,145 @@ align-self: center;
   }
   
   @media (min-width:769px) and (max-width:992px) {
-      
+    .leftContainer{
+        width: 100% !important;
+    }
+    .ourService{
+        display: none;
+    }
+    .rightSideChart{
+        display: flex;
+        justify-content: space-around;
+    }
+    .rightContainer{
+        width: 100%;
+    }
+    .leftSideChart{
+        width: 50%;
+    }
+    .moneyContainer{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .moneyChildContainer{
+        margin: 15px 0;
+        width: 100%;
+        height: 200px;
+    }
+    .transferBtn{
+        padding: 13px 30px;
+    }
+    .requestBtn{
+        padding: 13px 30px;
+    }
+    .transfer{
+        margin-top: 39px !important;
+    }
+    .earningContainer{
+        width: 7%;
+        height: 62px;
+        margin-top: 23px !important;
+    }
+    
+    .lastContainer{
+        width: 100%;
+        padding: 50px 150px;
+    }
+    /* .btnContainer{
+        padding: 15px 180px;
+    } */
   }   
+
+  @media (min-width:993px) and (max-width:1140px) {
+    .leftContainer{
+        width: 100% !important;
+    }
+    .ourService{
+        display: none;
+    }
+    .rightSideChart{
+        display: flex;
+        justify-content: space-around;
+    }
+    .rightContainer{
+        width: 100%;
+    }
+    .leftSideChart{
+        width: 50%;
+    }
+    .moneyContainer{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .moneyChildContainer{
+        margin: 15px 0;
+        width: 100%;
+        height: 200px;
+    }
+    .transferBtn{
+        padding: 13px 30px;
+    }
+    .requestBtn{
+        padding: 13px 30px;
+    }
+    .transfer{
+        margin-top: 39px !important;
+    }
+    .earningContainer{
+        width: 7%;
+        height: 62px;
+        margin-top: 23px !important;
+    }
+    
+    .lastContainer{
+        width: 100%;
+        padding: 50px 150px;
+    }
+  }
+
+  @media (min-width:1141px) and (max-width:1200px) {
+    .leftContainer{
+        width: 100% !important;
+    }
+    .ourService{
+        display: none;
+    }
+    .rightSideChart{
+        display: flex;
+        justify-content: space-around;
+    }
+    .rightContainer{
+        width: 100%;
+    }
+    .leftSideChart{
+        width: 50%;
+    }
+    .moneyContainer{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .moneyChildContainer{
+        margin: 15px 0;
+        width: 100%;
+        height: 200px;
+    }
+    .transferBtn{
+        padding: 13px 30px;
+    }
+    .requestBtn{
+        padding: 13px 30px;
+    }
+    .transfer{
+        margin-top: 39px !important;
+    }
+    .earningContainer{
+        width: 7%;
+        height: 62px;
+        margin-top: 23px !important;
+    }
+    
+    .lastContainer{
+        width: 100%;
+        padding: 50px 150px;
+    }
+  }

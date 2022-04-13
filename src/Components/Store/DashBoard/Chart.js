@@ -31,7 +31,6 @@ export default function Chart() {
         // "Dec",
       ],
       crosshair: true,
-      gridLineColor: "#fff",
     },
     yAxis: {
       min: 0,

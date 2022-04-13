@@ -13,7 +13,7 @@ import Chart from "./Chart";
 
 export default function Store() {
   return (
-    <div className={Styles.overallContainer}>
+    <div className={Styles.overallContainer + " container-fluid"}>
       <div className={Styles.leftContainer}>
         <div className={Styles.leftChildContainer}>
           <div className="mt-3">
@@ -102,14 +102,18 @@ export default function Store() {
             </div>
             <div className={Styles.moneyContainer}>
               <div className={Styles.moneyChildContainer}>
-                <div>
-                  <div className={Styles.transfer + " mt-3"}>
-                    <p className={Styles.moneyTitle + " mb-0 mt-4"}>
+                <div className="container pt-4">
+                  <div className={Styles.transfer}>
+                    <p className={Styles.moneyTitle + " mb-0 pt-2"}>
                       Total Balance
                     </p>
                     <p className={Styles.money}>₹2,500.00</p>
                   </div>
-                  <div className="d-flex justify-content-evenly">
+                  <div
+                    className={
+                      Styles.btnContainer + " d-flex justify-content-evenly"
+                    }
+                  >
                     <button className={Styles.transferBtn + " moneyBtn"}>
                       Transfer
                     </button>
@@ -120,18 +124,20 @@ export default function Store() {
                 </div>
               </div>
               <div className={Styles.moneyChildContainer}>
-                <div className="d-flex justify-content-center mt-3">
-                  <div className={Styles.earningContainer}>
-                    <img
-                      className={Styles.earnImg}
-                      src={earning}
-                      alt="earning"
-                    />
+                <div className="container">
+                  <div className="d-flex justify-content-center mt-3">
+                    <div className={Styles.earningContainer}>
+                      <img
+                        className={Styles.earnImg}
+                        src={earning}
+                        alt="earning"
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="mt-2">
-                  <p className={Styles.moneyTitle + " mb-0"}>Total Earning</p>
-                  <p className={Styles.money + " mb-0"}>₹10,500.00</p>
+                  <div className="mt-2">
+                    <p className={Styles.moneyTitle + " mb-0"}>Total Earning</p>
+                    <p className={Styles.money + " mb-0"}>₹10,500.00</p>
+                  </div>
                 </div>
               </div>
               <div className={Styles.moneyChildContainer}>

@@ -6,7 +6,9 @@ export default function PaymentDetails() {
   return (
     <div className={Styles.overallContainer}>
       <div className="d-flex justify-content-between pt-4">
-        <div className="d-flex w-50 justify-content-around">
+        <div
+          className={Styles.walletProfile + " d-flex justify-content-around"}
+        >
           <img
             className={Styles.profileContainer}
             src={profile}
@@ -19,7 +21,7 @@ export default function PaymentDetails() {
             </p>
           </div>
         </div>
-        <p className="align-self-center">₹ 2,500.00</p>
+        <p className={Styles.price + " align-self-center"}>₹ 2,500.00</p>
       </div>
       <hr />
       <div
@@ -27,7 +29,9 @@ export default function PaymentDetails() {
           Styles.paymentMethodContainer + " d-flex justify-content-between"
         }
       >
-        <span className="kstoreFont">Payment Method</span>
+        <span className={Styles.paymentMethodText + " kstoreFont"}>
+          Payment Method
+        </span>
         <div className={Styles.dropdownContainer + " d-flex"}>
           <span className={Styles.profileContent}>Visa 5432</span>
           <Dropdown>

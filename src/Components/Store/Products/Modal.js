@@ -12,6 +12,7 @@ import offerPoints from "../../../Assets/offer_points.svg";
 import reviewProfile from "../../../Assets/review_profile.svg";
 export default function ModalView(props) {
   const [index, setIndex] = useState(0);
+  const [productCount, setProductCount] = useState(0);
 
   const [offerdata, setOfferdata] = useState([
     { description: "Cash on Delivery Eligible" },
@@ -23,6 +24,15 @@ export default function ModalView(props) {
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
+
+  const handleProductCount = (data) => {
+    if (data < 0) {
+      setProductCount(0);
+    }
+  };
+
+  console.log(productCount, "===statecount");
+
   return (
     <div>
       <Modal
@@ -106,6 +116,8 @@ export default function ModalView(props) {
                     className={Styles.productCount}
                     type="number"
                     defaultValue={1}
+                    min="0"
+                    onChange={(e) => handleProductCount(e.target.value)}
                   />
                   <button className={Styles.addtocartBtn}>add to cart</button>
                 </div>
@@ -210,7 +222,7 @@ export default function ModalView(props) {
                         </div>
                         <div>
                           <form>
-                            <div className="d-flex justify-content-between">
+                            <div className={Styles.formInput}>
                               <input
                                 className={Styles.input}
                                 type="text"

@@ -100,27 +100,29 @@ export default function RecentActivity() {
       </div>
       <div className={Styles.mapContainer}>
         {[...new Array(10)].map((e) => (
-          <div className={Styles.tableContainer}>
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                    <div className={Styles.tableImgContainer}>
-                      <img
-                        className={Styles.settingsImg}
-                        src={purchase}
-                        alt="shop"
-                      />
-                    </div>
-                  </td>
-                  <td className={Styles.td}>Payment to Shoppe</td>
-                  <td className={Styles.td}>28 Mar 2022</td>
-                  <td className={Styles.td}>₹ 323.00</td>
-                  <td className={Styles.td}>Paid</td>
-                  <td>. . . .</td>
-                </tr>
-              </tbody>
-            </table>
+          <div className={Styles.tableParentContainer}>
+            <div className={Styles.tableContainer}>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div className={Styles.tableImgContainer}>
+                        <img
+                          className={Styles.settingsImg}
+                          src={purchase}
+                          alt="shop"
+                        />
+                      </div>
+                    </td>
+                    <td className={Styles.td}>Payment to Shoppe</td>
+                    <td className={Styles.td}>28 Mar 2022</td>
+                    <td className={Styles.td}>₹ 323.00</td>
+                    <td className={Styles.td}>Paid</td>
+                    <td>. . . .</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         ))}
       </div>

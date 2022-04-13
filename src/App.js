@@ -13,19 +13,37 @@ import Wishlist from "./Components/Store/Wishlist/Wishlist";
 import AuthLayout from "./Layout/AuthLayout/AuthLayout";
 import HomeLayout from "./Layout/HomeLayout/HomeLayout";
 import StoreLayout from "./Layout/StoreLayout/StoreLayout";
+import { AuthPrivateRoute, StorePrivateRoute } from "./Utility/PrivateRoute";
 
 function App() {
   return (
     <Routes>
-      <Route path="/auth" element={<AuthLayout />}>
+      <Route
+        path="/auth"
+        element={
+          // <AuthPrivateRoute>
+          <AuthLayout />
+          // </AuthPrivateRoute>
+        }
+      >
         <Route index element={<SignIn />} />
-        <Route path="signup" element={<SignUp />} />
+
         <Route path="forgotpassword" element={<ForgotPassword />} />
       </Route>
       <Route path="/" element={<HomeLayout />}>
         <Route index element={<Home />} />
       </Route>
-      <Route path="/store" element={<StoreLayout />}>
+
+      <Route path="signup" element={<SignUp />} />
+
+      <Route
+        path="/store"
+        element={
+          // <StorePrivateRoute>
+          <StoreLayout />
+          // </StorePrivateRoute>
+        }
+      >
         <Route index element={<Store />} />
         <Route path="products" element={<Products />} />
         <Route path="addtocart" element={<AddToCart />} />

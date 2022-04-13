@@ -20,7 +20,7 @@ export default function Map(props) {
         <p className={Styles.thirdTitle + " text-white kstore2 fs-5"}>
           Learn what it takes to partner with our brand.
         </p>
-        <div className={Styles.btnContainer}>
+        <div className={Styles.btnContainer + " mt-3"}>
           <button
             data-aos="fade-right"
             data-aos-once="true"

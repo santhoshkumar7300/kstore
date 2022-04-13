@@ -1,6 +1,18 @@
 .container{
     margin-top: 15px !important;
 }
+.li{
+    padding: 3px 0;
+font-size: 12px;
+font-weight: bold;
+list-style: disc;
+}
+.li:hover{
+    color: #ff7b26;
+}
+.ul{
+    background-color: white;
+}
 /* ul{
     list-style: disc;
     padding: 0 35px;

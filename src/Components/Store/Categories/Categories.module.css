@@ -66,11 +66,86 @@ cursor: pointer;
   .categoriesListContainer{
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: space-between; */
+    justify-content: space-around;
     padding: 25px 0;
     
   }
   .dropdownParent{
       padding: 25px 0;
+      position: relative;
   }
-  
+
+  .selectOptionContainer{
+    width: 200px;
+    background-color: white;
+    padding: 15px 25px;
+    text-align: center;
+    border-radius: 12px;
+    margin-right: 25px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  /* .optionsParent{
+    position: absolute;
+    top: 95px;
+    background: white;
+    border-radius: 8px;
+    max-height: 300px;
+  }
+  .ulStyle{
+      list-style: disc;
+      padding: 5px 25px;
+      margin: 0;
+  } */
+
+  @media only screen and (max-width:600px) {
+      .dropdownParent{
+          overflow-x: auto;
+      }
+      .categoriesListContainer{
+          justify-content: center;
+      }
+      .searchBtn{
+          height: unset;
+          padding: 10px 10px;
+      }
+      .searchInput{
+          height: unset;
+          width: 65%;
+      }
+      .settingsContainer{
+          width: 35px;
+          height: 31px;
+          align-self: center;
+      }
+      .settingsImg{
+          width: 15px;
+      }
+      
+  }
+
+  @media (min-width:601px) and (max-width:768px) {
+      .searchInput{
+          width: 60%;
+      }
+      .dropdownParent{
+        overflow-x: auto;
+    }
+    .categoriesListContainer{
+        justify-content: space-around;
+    }
+  }
+
+  @media (min-width:769px) and (max-width:992px) {
+    .searchInput{
+        width: 60%;
+    }
+    .dropdownParent{
+      overflow-x: auto;
+  }
+  .categoriesListContainer{
+      justify-content: space-around;
+  }
+  }

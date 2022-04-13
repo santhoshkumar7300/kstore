@@ -21,3 +21,66 @@
     font-size: 12px;
     align-self: center;
 }
+.walletProfile{
+    width: 50%;
+}
+.price{
+    font-size: 13px;
+}
+.paymentMethodText{
+    font-size: 13px;
+}
+
+@media only screen and (max-width:450px) {
+    .profileContent{
+        font-size: 10px;
+    }
+    .profileContainer{
+        width: 45px;
+        height: 45px;
+    }
+    .price{
+        font-size: 10px;
+    }
+    .walletProfile{
+        width: 60%;
+    }
+    .paymentMethodText{
+        font-size: 10px;
+        align-self: center;
+    }
+    .dropdownContainer{
+        width: 36%;
+    }
+}
+
+
+@media (min-width:451px) and (max-width:768px) {
+    
+}
+
+@media (min-width:769px) and (max-width:992px) {
+    .walletProfile{
+        width: 30%;
+    }
+    .dropdownContainer{
+        width: 16%;
+    }
+    .profileContent{
+        font-size: 15px;
+    }
+    .price{
+        font-size: 15px;
+    }
+    .paymentMethodText{
+        font-size: 15px;
+    }
+}
+
+@media (min-width:923px) and (max-width:1140px) {
+    
+}
+
+@media (min-width:1141px) and (max-width:1200px) {
+    
+}

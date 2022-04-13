@@ -2,7 +2,10 @@ import Styles from "./Popup.module.css";
 import save from "../../../Assets/save.svg";
 import img from "../../../Assets/multipleSel.svg";
 import del from "../../../Assets/wishlist_del.svg";
+import { useState } from "react";
 export default function Popup() {
+  const [isPopup, setIsPopup] = useState(false);
+
   return (
     <div className={Styles.overallPopupContainer}>
       <div className="d-flex justify-content-end">
@@ -37,6 +40,7 @@ export default function Popup() {
                     className={Styles.productCount}
                     type="number"
                     defaultValue={1}
+                    min="0"
                   />
                 </td>
                 <td className={Styles.td}>₹ 18,000.00</td>
